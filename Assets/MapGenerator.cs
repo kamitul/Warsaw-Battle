@@ -18,7 +18,7 @@ public class MapGenerator : MonoBehaviour
 
     private void GenerateMap()
     {
-        for (int z = 0, i = 0; z < 35; z++)
+        for (int z = 0, i = 0; z < 40; z++)
         {
             for (int x = 0; x < 15; x++)
             {
@@ -30,7 +30,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        parent.localPosition = new Vector3(-8.2f, 1.06f, -5.78f);
+        parent.localPosition = new Vector3(-8.7F, 1.06f, -6.28f);
         parent.localRotation = Quaternion.Euler(new Vector3(0, 45, 0));
     }
 }
