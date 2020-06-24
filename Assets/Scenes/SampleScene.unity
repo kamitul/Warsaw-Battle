@@ -147,13 +147,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221518809}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.37, y: 0.207, z: 0.927}
-  m_LocalScale: {x: 0.1, y: 0.38155368, z: 0.1}
+  m_LocalRotation: {x: -0, y: -0.92100906, z: -0, w: 0.3895413}
+  m_LocalPosition: {x: 1.9948947, y: 1.207, z: -6.1565895}
+  m_LocalScale: {x: 0.053347595, y: 0.38155368, z: 0.10633659}
   m_Children:
   - {fileID: 459474559}
-  m_Father: {fileID: 1285647452}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &221518811
 BoxCollider:
@@ -973,7 +973,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f58a9d08a8ec00f4cb2bce08b426bce9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1009,16 +1009,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285647448}
-  m_LocalRotation: {x: -0, y: -0.92100906, z: -0, w: 0.3895413}
-  m_LocalPosition: {x: 1.45, y: 1, z: -4.18}
-  m_LocalScale: {x: 0.5334757, y: 1, z: 1.0633655}
-  m_Children:
-  - {fileID: 1364044571}
-  - {fileID: 1343745800}
-  - {fileID: 221518810}
+  m_LocalRotation: {x: -0, y: 0.9347163, z: -0, w: 0.35539478}
+  m_LocalPosition: {x: 0.94, y: 1, z: -3.6}
+  m_LocalScale: {x: 1.3022176, y: 1, z: 0.7634127}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 138.365, z: 0}
 --- !u!1 &1343745799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,13 +1042,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343745799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.57, y: 0.207, z: 0.419}
-  m_LocalScale: {x: 0.1, y: 0.38155368, z: 0.1}
+  m_LocalRotation: {x: -0, y: -0.92100906, z: -0, w: 0.3895413}
+  m_LocalPosition: {x: 2.0852444, y: 1.207, z: -5.474106}
+  m_LocalScale: {x: 0.053347595, y: 0.38155368, z: 0.10633659}
   m_Children:
   - {fileID: 650842242}
-  m_Father: {fileID: 1285647452}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1343745801
 BoxCollider:
@@ -1233,13 +1230,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364044570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.08, y: 0.207, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.38155368, z: 0.1}
+  m_LocalRotation: {x: -0, y: -0.92100906, z: -0, w: 0.3895413}
+  m_LocalPosition: {x: 2.594448, y: 1.207, z: -5.358997}
+  m_LocalScale: {x: 0.053347595, y: 0.38155368, z: 0.10633659}
   m_Children:
   - {fileID: 1746442469}
-  m_Father: {fileID: 1285647452}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1364044572
 BoxCollider:
@@ -1419,13 +1416,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016845504}
-  m_LocalRotation: {x: -0.22812958, y: -0.73641866, z: 0.56254655, w: -0.29863998}
-  m_LocalPosition: {x: 0.2831509, y: 6.400023, z: -2.9779277}
-  m_LocalScale: {x: 1.0633662, y: 0.56574404, z: 0.9677322}
+  m_LocalRotation: {x: 0.43100628, y: -0.31485528, z: 0.16356531, w: 0.8296663}
+  m_LocalPosition: {x: 3.83, y: 5.98, z: -7.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 105.247986, y: 89.99999, z: 180}
+  m_LocalEulerAnglesHint: {x: 54.903004, y: -41.563004, z: 0}
 --- !u!81 &2016845506
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1459,7 +1456,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 59.2
+  field of view: 69.2
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
