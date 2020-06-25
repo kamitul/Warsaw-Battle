@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> screens;
+    private List<GameObject> screens = default;
 
     public void OpenScreen(string name)
     {

@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SoldierController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private SoldierData data;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private SoldierUIController soldierUI;
+
+    public SoldierData Data { get => data; }
+
+    private void Awake()
     {
-        
+        soldierUI.Set(Data as SoldierData);
     }
 }
