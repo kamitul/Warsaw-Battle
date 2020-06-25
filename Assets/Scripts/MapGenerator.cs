@@ -6,10 +6,13 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField]
-    private Transform parent;
+    private Transform parent = default;
 
     [SerializeField]
-    private GameObject hex;
+    private GameObject hex = default;
+
+    [SerializeField]
+    private List<GameObject> hexTiles = default;
 
     private void Awake()
     {
@@ -27,6 +30,7 @@ public class MapGenerator : MonoBehaviour
                 position.y = 0f;
                 position.z = z * (0.5f * 1.5f) * 0.5f;
                 var obj = Instantiate(hex, position, Quaternion.Euler(new Vector3(90, 0, 0)), parent);
+                hexTiles.Add(obj);
             }
         }
 
