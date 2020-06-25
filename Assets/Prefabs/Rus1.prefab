@@ -772,6 +772,7 @@ SkinnedMeshRenderer:
   - {fileID: 637949407474519127, guid: e5e11a0eb46a3324582e4fd261ee433f, type: 3}
   - {fileID: 3016479151454471876, guid: e5e11a0eb46a3324582e4fd261ee433f, type: 3}
   - {fileID: -6629797300637803691, guid: e5e11a0eb46a3324582e4fd261ee433f, type: 3}
+  - {fileID: 2100000, guid: cfcef833e25e62d44bbcdce400b1c2c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1195,6 +1196,8 @@ GameObject:
   - component: {fileID: 2017754774275223271}
   - component: {fileID: 4553346199467379001}
   - component: {fileID: 4816820342869573207}
+  - component: {fileID: -6530214265363632074}
+  - component: {fileID: 4601480016335334516}
   m_Layer: 0
   m_Name: Rus1
   m_TagString: Untagged
@@ -1251,7 +1254,7 @@ MonoBehaviour:
     amount: 40
     damage: 10
     hp: 100
-    movement: 3
+    movement: 2
     TotalDamage: 0
   soldierUI: {fileID: 4816820342869573207}
 --- !u!114 &4553346199467379001
@@ -1281,6 +1284,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: {fileID: 3966581539248759815}
+--- !u!114 &-6530214265363632074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542221940529583656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fbbd24ee1fb6d448e3c059a758ba0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierSelector: {fileID: 4601480016335334516}
+--- !u!114 &4601480016335334516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8542221940529583656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03fc7c4b4c911b14189a6cfc369ad232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinnedMesh: {fileID: 537847083939954726}
+  OutlineStrength: 0.5
+  IsSelected: 0
 --- !u!1 &8646114522565905792
 GameObject:
   m_ObjectHideFlags: 0

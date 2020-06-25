@@ -852,6 +852,7 @@ SkinnedMeshRenderer:
   - {fileID: 637949407474519127, guid: e5e11a0eb46a3324582e4fd261ee433f, type: 3}
   - {fileID: 3016479151454471876, guid: e5e11a0eb46a3324582e4fd261ee433f, type: 3}
   - {fileID: -6629797300637803691, guid: e5e11a0eb46a3324582e4fd261ee433f, type: 3}
+  - {fileID: 2100000, guid: cfcef833e25e62d44bbcdce400b1c2c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1357,6 +1358,8 @@ GameObject:
   - component: {fileID: 4010924261793529352}
   - component: {fileID: 4346853958493201293}
   - component: {fileID: -7651894498541363316}
+  - component: {fileID: -3346528174723553202}
+  - component: {fileID: -6642006868651580699}
   m_Layer: 0
   m_Name: Rus3
   m_TagString: Untagged
@@ -1443,6 +1446,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: {fileID: 3517789780846962109}
+--- !u!114 &-3346528174723553202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143880518980657711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fbbd24ee1fb6d448e3c059a758ba0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierSelector: {fileID: -6642006868651580699}
+--- !u!114 &-6642006868651580699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143880518980657711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03fc7c4b4c911b14189a6cfc369ad232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinnedMesh: {fileID: 1089684642243294241}
+  OutlineStrength: 0.5
 --- !u!1 &9193162007762155911
 GameObject:
   m_ObjectHideFlags: 0

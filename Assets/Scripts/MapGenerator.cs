@@ -14,6 +14,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField]
     private List<GameObject> hexTiles = default;
 
+    public List<GameObject> HexTiles { get => hexTiles; }
+
     private void Awake()
     {
         GenerateMap();
