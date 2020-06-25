@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class HexTile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private HexData hexData;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public HexData Data { get => hexData; }
 }
