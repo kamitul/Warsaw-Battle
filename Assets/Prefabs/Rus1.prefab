@@ -1254,7 +1254,8 @@ MonoBehaviour:
     amount: 40
     damage: 10
     hp: 100
-    movement: 2
+    movement: 0
+    ownType: 0
     TotalDamage: 0
   soldierUI: {fileID: 4816820342869573207}
 --- !u!114 &4553346199467379001

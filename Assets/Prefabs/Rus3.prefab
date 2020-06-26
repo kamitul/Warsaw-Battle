@@ -1416,7 +1416,8 @@ MonoBehaviour:
     amount: 15
     damage: 20
     hp: 100
-    movement: 1
+    movement: 0
+    ownType: 0
     TotalDamage: 0
   soldierUI: {fileID: -7651894498541363316}
 --- !u!114 &4346853958493201293
@@ -1473,6 +1474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinnedMesh: {fileID: 1089684642243294241}
   OutlineStrength: 0.5
+  IsSelected: 0
 --- !u!1 &9193162007762155911
 GameObject:
   m_ObjectHideFlags: 0

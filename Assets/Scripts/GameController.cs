@@ -80,12 +80,12 @@ public class GameController : MonoBehaviour
 
     private void MoveObject()
     {
-        SoldierMovement solMov = currentSoldier.GetComponent<SoldierMovement>();
+        SoldierMovement sol = currentSoldier.GetComponent<SoldierMovement>();
         if (Input.GetMouseButtonDown(0))
-            MoveSoldier(solMov);
+            MoveSoldier(sol);
     }
 
-    private void MoveSoldier(SoldierMovement solMov)
+    private void MoveSoldier(SoldierMovement sol)
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -93,7 +93,20 @@ public class GameController : MonoBehaviour
         {
             var tile = hit.collider.GetComponent<HexTile>();
             if (tile && tile.Data.Status == Type.REACHABLE)
-                solMov.MoveToTile(tile.transform.position, (tile.transform.position - solMov.transform.position).sqrMagnitude);
+            {
+                sol.MoveToTile(tile.transform.position, (tile.transform.position - sol.transform.position).sqrMagnitude);
+                ResetMovement();
+            }
+        }
+    }
+
+    private void ResetMovement()
+    {
+        for (int i = 0; i < soldiers.Count; ++i)
+        {
+            var sol = soldiers[i].GetComponent<SoldierController>();
+            if (sol.Data.Ownership == CurrentPlayer.Data.PlayerType)
+                sol.Data.Movement = 0;
         }
     }
 }

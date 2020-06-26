@@ -68,7 +68,7 @@ public class TurnController : MonoBehaviour
         {
             CurrentPlayer = CurrentPlayer == player1 ? player2 : player1;
             cameraController.MoveToPoint(CurrentPlayer.Data.PlayerType);
-            dice.Rolled = false;
+            dice.Data.Rolled = false;
         }
     }
 }
