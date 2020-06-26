@@ -36,6 +36,7 @@ public class TurnController : MonoBehaviour
     [SerializeField]
     private DiceController dice;
 
+    [HideInInspector]
     public PlayerController CurrentPlayer;
 
     public List<GameObject> Initialize()
@@ -61,13 +62,7 @@ public class TurnController : MonoBehaviour
         return ret;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            NextTurn();
-    }
-
-    private void NextTurn()
+    public void NextTurn()
     {
         if (CurrentPlayer)
         {

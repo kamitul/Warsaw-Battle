@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     private ObservableCollection<SoldierMovement> soldiers = new ObservableCollection<SoldierMovement>();
 
     public GameObject CurrentSoldier { get => currentSoldier; }
+    public PlayerController CurrentPlayer { get => turnController.CurrentPlayer; }
 
     private void Awake()
     {
@@ -53,14 +54,23 @@ public class GameController : MonoBehaviour
 
     private void Select(GameObject obj)
     {
-        currentSoldier = obj;
-        rangeDrawer.DrawRange(obj.transform.position, obj.GetComponent<SoldierController>().Data.Movement);
+        if (obj.GetComponent<SoldierController>().Data.Ownership == CurrentPlayer.Data.PlayerType)
+        {
+            currentSoldier = obj;
+            rangeDrawer.DrawRange(obj.transform.position, obj.GetComponent<SoldierController>().Data.Movement);
+        }
     }
 
     private void Update()
     {
         if (currentSoldier)
             MoveObject();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            currentSoldier = null;
+            rangeDrawer.Redraw();
+            turnController.NextTurn();
+        }
     }
 
     private void MoveObject()

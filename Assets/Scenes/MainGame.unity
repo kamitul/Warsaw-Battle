@@ -2533,6 +2533,18 @@ Transform:
   m_Father: {fileID: 630637522}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1386011825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1168677129923022183, guid: d5ffdacebfe2e3f42a39880ff9ddace7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1921125997276628573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a169f3cdb23f174c9393e9e271f0eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1394244599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3176,7 +3188,7 @@ MonoBehaviour:
       Ownership: 1
     - Position: {x: 0.43, y: 1.054, z: -7.11}
       Ownership: 0
-  dice: {fileID: 0}
+  dice: {fileID: 1386011825}
   CurrentPlayer: {fileID: 0}
 --- !u!1 &2035868548
 GameObject:

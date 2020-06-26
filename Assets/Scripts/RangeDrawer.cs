@@ -44,4 +44,9 @@ public class RangeDrawer : MonoBehaviour
         List<GameObject> tiles = mapGenerator.HexTiles.FindAll(x => (x.transform.position - position).sqrMagnitude < range);
         return tiles.ToArray();
     }
+
+    public void Redraw()
+    {
+        RedrawTiles();
+    }
 }
