@@ -39,7 +39,7 @@ public class MapGenerator : MonoBehaviour
 
     private void GenerateMap()
     {
-        for (int z = 0, i = 0; z < 40; z++)
+        for (int z = 0, i = 0; z < 38; z++)
         {
             for (int x = 0; x < 15; x++)
             {

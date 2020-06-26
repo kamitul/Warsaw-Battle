@@ -96,6 +96,8 @@ public class GameController : MonoBehaviour
             {
                 sol.MoveToTile(tile.transform.position, (tile.transform.position - sol.transform.position).sqrMagnitude);
                 ResetMovement();
+                currentSoldier = null;
+                rangeDrawer.Redraw();
             }
         }
     }
