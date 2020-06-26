@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
     private List<CameraData> cameraDatas = default;
 
     private bool RightMouseClicked = false;
+
     [SerializeField]
     private bool IsFree = true;
 
@@ -35,7 +36,7 @@ public class CameraController : MonoBehaviour
         camera.transform.DORotateQuaternion(Quaternion.Euler(rot), time).OnStart(() => IsFree = false).OnComplete(() => IsFree = true);
     }
 
-    public void MoveToPoint(Position pos)
+    public void MoveToPoint(PlayerType pos)
     {
         var toPoint = cameraDatas.Find(x => x.Type == pos);
         MoveToPoint(toPoint.Position, toPoint.Rotation, toPoint.Speed);

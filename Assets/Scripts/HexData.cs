@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum Type
 {
-    WALKABLE,
+    REACHABLE,
+    NON_REACHABLE,
     NON_WALKABLE,
 }
 

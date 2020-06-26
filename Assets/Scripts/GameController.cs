@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -9,27 +11,35 @@ public class GameController : MonoBehaviour
     private RangeDrawer rangeDrawer;
 
     [SerializeField]
-    private List<SoldierMovement> soldiers;
+    private TurnController turnController;
 
     private GameObject currentSoldier;
 
+    private ObservableCollection<SoldierMovement> soldiers = new ObservableCollection<SoldierMovement>();
+
     public GameObject CurrentSoldier { get => currentSoldier; }
 
-    private void OnEnable()
+    private void Awake()
     {
-        for(int i = 0; i < soldiers.Count; ++i)
+        var objs = turnController.Initialize();
+        soldiers.CollectionChanged += UpdateSubscription;
+        for (int i = 0; i < objs.Count; ++i)
         {
-            soldiers[i].OnDeselected += Deselect;
-            soldiers[i].OnSelected += Select;
+            soldiers.Add(objs[i].GetComponent<SoldierMovement>());
         }
     }
 
     private void OnDisable()
     {
+        soldiers.CollectionChanged -= UpdateSubscription;
+    }
+
+    private void UpdateSubscription(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+    {
         for (int i = 0; i < soldiers.Count; ++i)
         {
-            soldiers[i].OnDeselected -= Deselect;
-            soldiers[i].OnSelected -= Select;
+            soldiers[i].OnDeselected += Deselect;
+            soldiers[i].OnSelected += Select;
         }
     }
 
@@ -67,7 +77,7 @@ public class GameController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100.0f))
         {
             var tile = hit.collider.GetComponent<HexTile>();
-            if (tile)
+            if (tile && tile.Data.Status == Type.REACHABLE)
                 solMov.MoveToTile(tile.transform.position, (tile.transform.position - solMov.transform.position).sqrMagnitude);
         }
     }
