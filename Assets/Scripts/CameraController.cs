@@ -62,9 +62,9 @@ public class CameraController : MonoBehaviour
 
     private void Rotate()
     {
-        xMouse += Input.GetAxis("Mouse X") * Time.deltaTime * mouseData.MouseSensX;
-        yMouse -= Input.GetAxis("Mouse Y") * Time.deltaTime * mouseData.MouseSensY;
-        camera.transform.eulerAngles = new Vector3(yMouse, xMouse, 0f);
+        xMouse = Input.GetAxis("Mouse X") * Time.deltaTime * mouseData.MouseSensX;
+        yMouse = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseData.MouseSensY;
+        camera.transform.eulerAngles += new Vector3(-yMouse, xMouse, 0f);
     }
 
     private void Move()

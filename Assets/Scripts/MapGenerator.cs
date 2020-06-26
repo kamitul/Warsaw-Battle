@@ -52,7 +52,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        parent.localPosition = new Vector3(-8.7F, 1.06f, -6.28f);
+        parent.localPosition = new Vector3(-8.7F, 1.041f, -6.28f);
         parent.localRotation = Quaternion.Euler(new Vector3(0, 45, 0));
     }
 }
