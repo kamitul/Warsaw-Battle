@@ -26,13 +26,19 @@ public class CameraController : MonoBehaviour
     private float yMouse = 0f;
     private void Start()
     {
-        MoveToPoint(cameraDatas[0].Position, cameraDatas[0].Rotation, cameraDatas[0].Speed);
+        MoveToPoint(cameraDatas[1].Position, cameraDatas[1].Rotation, cameraDatas[1].Speed);
     }
 
     public void MoveToPoint(Vector3 pos, Vector3 rot, float time)
     {
         camera.transform.DOMove(pos, time).OnStart(() => IsFree = false).OnComplete(() => IsFree = true);
         camera.transform.DORotateQuaternion(Quaternion.Euler(rot), time).OnStart(() => IsFree = false).OnComplete(() => IsFree = true);
+    }
+
+    public void MoveToPoint(Position pos)
+    {
+        var toPoint = cameraDatas.Find(x => x.Type == pos);
+        MoveToPoint(toPoint.Position, toPoint.Rotation, toPoint.Speed);
     }
 
     private void Update()
