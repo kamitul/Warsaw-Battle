@@ -12,18 +12,34 @@ public class MapGenerator : MonoBehaviour
     private GameObject hex = default;
 
     [SerializeField]
+    private List<GameObject> objectives = default;
+
+    [SerializeField]
+    private List<GameObject> enviros = default;
+
+    [SerializeField]
     private List<GameObject> hexTiles = default;
+
+    [SerializeField]
+    private List<MapPlacer> mapPlacers;
 
     public List<GameObject> HexTiles { get => hexTiles; }
 
     private void Awake()
     {
         GenerateMap();
+        for(int i = 0; i < mapPlacers.Count; ++i)
+        {
+            mapPlacers[i].SetTiles(hexTiles);
+        }
+
+        objectives = mapPlacers.Find(x => x as ObjectivesPlacer).PlaceOnMap();
+        enviros = mapPlacers.Find(x => x as EnviroPlacer).PlaceOnMap();
     }
 
     private void GenerateMap()
     {
-        for (int z = 0, i = 0; z < 40; z++)
+        for (int z = 0, i = 0; z < 38; z++)
         {
             for (int x = 0; x < 15; x++)
             {
@@ -36,7 +52,7 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        parent.localPosition = new Vector3(-8.7F, 1.06f, -6.28f);
+        parent.localPosition = new Vector3(-8.7F, 1.041f, -6.28f);
         parent.localRotation = Quaternion.Euler(new Vector3(0, 45, 0));
     }
 }

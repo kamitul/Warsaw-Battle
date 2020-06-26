@@ -918,7 +918,7 @@ MeshCollider:
   m_GameObject: {fileID: 5154187500959154330}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -1024,7 +1024,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6822946172948031474}
-  - component: {fileID: 6189117733504679247}
   m_Layer: 0
   m_Name: Zolnierze33Rus
   m_TagString: Untagged
@@ -1048,25 +1047,6 @@ Transform:
   m_Father: {fileID: 8414694727352401232}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -5.644, y: 0, z: -1.9710001}
---- !u!95 &6189117733504679247
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6189117733504679240}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d865460966ada9a4b9a68d71cb0c2a91, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7049245332979663984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1339,7 @@ GameObject:
   - component: {fileID: -827856560175901839}
   - component: {fileID: 1440994835635238131}
   - component: {fileID: 3885094791386004317}
+  - component: {fileID: 4834460285660425565}
   m_Layer: 0
   m_Name: Rus2
   m_TagString: Untagged
@@ -1415,7 +1396,8 @@ MonoBehaviour:
     amount: 25
     damage: 5
     hp: 100
-    movement: 3
+    movement: 0
+    ownType: 0
     TotalDamage: 0
   soldierUI: {fileID: -827856560175901839}
 --- !u!114 &6095028076260168846
@@ -1458,6 +1440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierSelector: {fileID: 3885094791386004317}
+  offset: {x: 0, y: 0.02, z: 0}
 --- !u!114 &3885094791386004317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,6 +1456,19 @@ MonoBehaviour:
   skinnedMesh: {fileID: 924389852478841014}
   OutlineStrength: 0.5
   IsSelected: 0
+--- !u!65 &4834460285660425565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9020383663196665528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.2, z: 0.06}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &9104185933511820220
 GameObject:
   m_ObjectHideFlags: 0

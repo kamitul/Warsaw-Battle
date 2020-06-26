@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     private RangeDrawer rangeDrawer;
 
     [SerializeField]
+    private LightningController lightningController;
+
+    [SerializeField]
     private TurnController turnController;
 
     private GameObject currentSoldier;
@@ -19,6 +22,7 @@ public class GameController : MonoBehaviour
 
     public GameObject CurrentSoldier { get => currentSoldier; }
     public PlayerController CurrentPlayer { get => turnController.CurrentPlayer; }
+    public ObservableCollection<SoldierMovement> Soldiers { get => soldiers; }
 
     private void Awake()
     {
@@ -58,6 +62,7 @@ public class GameController : MonoBehaviour
         {
             currentSoldier = obj;
             rangeDrawer.DrawRange(obj.transform.position, obj.GetComponent<SoldierController>().Data.Movement);
+            lightningController.SetLightning(obj);
         }
     }
 
@@ -75,12 +80,12 @@ public class GameController : MonoBehaviour
 
     private void MoveObject()
     {
-        SoldierMovement solMov = currentSoldier.GetComponent<SoldierMovement>();
+        SoldierMovement sol = currentSoldier.GetComponent<SoldierMovement>();
         if (Input.GetMouseButtonDown(0))
-            MoveSoldier(solMov);
+            MoveSoldier(sol);
     }
 
-    private void MoveSoldier(SoldierMovement solMov)
+    private void MoveSoldier(SoldierMovement sol)
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -88,7 +93,22 @@ public class GameController : MonoBehaviour
         {
             var tile = hit.collider.GetComponent<HexTile>();
             if (tile && tile.Data.Status == Type.REACHABLE)
-                solMov.MoveToTile(tile.transform.position, (tile.transform.position - solMov.transform.position).sqrMagnitude);
+            {
+                sol.MoveToTile(tile.transform.position, (tile.transform.position - sol.transform.position).sqrMagnitude);
+                ResetMovement();
+                currentSoldier = null;
+                rangeDrawer.Redraw();
+            }
+        }
+    }
+
+    private void ResetMovement()
+    {
+        for (int i = 0; i < soldiers.Count; ++i)
+        {
+            var sol = soldiers[i].GetComponent<SoldierController>();
+            if (sol.Data.Ownership == CurrentPlayer.Data.PlayerType)
+                sol.Data.Movement = 0;
         }
     }
 }

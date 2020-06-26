@@ -10,6 +10,9 @@ public class SoldierMovement : MonoBehaviour
     [SerializeField]
     private SoldierSelector soldierSelector;
 
+    [SerializeField]
+    private Vector3 offset;
+
     public Action OnDeselected;
     public Action<GameObject> OnSelected;
 

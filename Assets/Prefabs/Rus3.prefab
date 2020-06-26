@@ -919,7 +919,7 @@ MeshCollider:
   m_GameObject: {fileID: 4921339269077521421}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -1024,7 +1024,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6729706748666164069}
-  - component: {fileID: 6210296818333116896}
   m_Layer: 0
   m_Name: Zolnierze33Rus
   m_TagString: Untagged
@@ -1048,25 +1047,6 @@ Transform:
   m_Father: {fileID: 8578303414450465223}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -5.644, y: 0, z: -1.9710001}
---- !u!95 &6210296818333116896
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6210296818333116895}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4fd8a023bc5236249a050fec98d409cd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7068595933049737447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1340,7 @@ GameObject:
   - component: {fileID: -7651894498541363316}
   - component: {fileID: -3346528174723553202}
   - component: {fileID: -6642006868651580699}
+  - component: {fileID: 2648227429780842201}
   m_Layer: 0
   m_Name: Rus3
   m_TagString: Untagged
@@ -1416,7 +1397,8 @@ MonoBehaviour:
     amount: 15
     damage: 20
     hp: 100
-    movement: 1
+    movement: 0
+    ownType: 0
     TotalDamage: 0
   soldierUI: {fileID: -7651894498541363316}
 --- !u!114 &4346853958493201293
@@ -1459,6 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soldierSelector: {fileID: -6642006868651580699}
+  offset: {x: 0, y: 0.02, z: 0}
 --- !u!114 &-6642006868651580699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,6 +1456,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skinnedMesh: {fileID: 1089684642243294241}
   OutlineStrength: 0.5
+  IsSelected: 0
+--- !u!65 &2648227429780842201
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143880518980657711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.2, z: 0.06}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1 &9193162007762155911
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,9 @@ public class TurnController : MonoBehaviour
     private List<Troop> initialTroops;
 
     [SerializeField]
+    private List<Place> dicePlaces;
+
+    [SerializeField]
     private DiceController dice;
 
     [HideInInspector]
@@ -68,7 +71,8 @@ public class TurnController : MonoBehaviour
         {
             CurrentPlayer = CurrentPlayer == player1 ? player2 : player1;
             cameraController.MoveToPoint(CurrentPlayer.Data.PlayerType);
-            dice.Rolled = false;
+            dice.Data.Rolled = false;
+            dice.transform.position = dicePlaces.Find(x => x.Ownership == CurrentPlayer.Data.PlayerType).Position;
         }
     }
 }
