@@ -24,9 +24,11 @@ public class RangeDrawer : MonoBehaviour
         GameObject[] tiles = SelectTiles(position, range);
         for(int i = 0; i < tiles.Length; ++i)
         {
-            tiles[i].GetComponent<MeshRenderer>().material.SetColor("_Color", selectedColor);
-            if(tiles[i].GetComponent<HexTile>().Data.Status != Type.NON_WALKABLE)
+            if (tiles[i].GetComponent<HexTile>().Data.Status != Type.NON_WALKABLE)
+            {
+                tiles[i].GetComponent<MeshRenderer>().material.SetColor("_Color", selectedColor);
                 tiles[i].GetComponent<HexTile>().Data.Status = Type.REACHABLE;
+            }
         }
     }
 
@@ -34,8 +36,11 @@ public class RangeDrawer : MonoBehaviour
     {
         for (int i = 0; i < mapGenerator.HexTiles.Count; ++i)
         {
-            mapGenerator.HexTiles[i].GetComponent<MeshRenderer>().material.SetColor("_Color", defaultColor);
-            mapGenerator.HexTiles[i].GetComponent<HexTile>().Data.Status = Type.NON_REACHABLE;
+            if (mapGenerator.HexTiles[i].GetComponent<HexTile>().Data.Status != Type.NON_WALKABLE)
+            {
+                mapGenerator.HexTiles[i].GetComponent<MeshRenderer>().material.SetColor("_Color", defaultColor);
+                mapGenerator.HexTiles[i].GetComponent<HexTile>().Data.Status = Type.NON_REACHABLE;
+            }
         }
     }
 

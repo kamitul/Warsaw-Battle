@@ -12,13 +12,29 @@ public class MapGenerator : MonoBehaviour
     private GameObject hex = default;
 
     [SerializeField]
+    private List<GameObject> objectives = default;
+
+    [SerializeField]
+    private List<GameObject> enviros = default;
+
+    [SerializeField]
     private List<GameObject> hexTiles = default;
+
+    [SerializeField]
+    private List<MapPlacer> mapPlacers;
 
     public List<GameObject> HexTiles { get => hexTiles; }
 
     private void Awake()
     {
         GenerateMap();
+        for(int i = 0; i < mapPlacers.Count; ++i)
+        {
+            mapPlacers[i].SetTiles(hexTiles);
+        }
+
+        objectives = mapPlacers.Find(x => x as ObjectivesPlacer).PlaceOnMap();
+        enviros = mapPlacers.Find(x => x as EnviroPlacer).PlaceOnMap();
     }
 
     private void GenerateMap()

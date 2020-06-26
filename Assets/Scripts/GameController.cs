@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     private RangeDrawer rangeDrawer;
 
     [SerializeField]
+    private LightningController lightningController;
+
+    [SerializeField]
     private TurnController turnController;
 
     private GameObject currentSoldier;
@@ -19,6 +22,7 @@ public class GameController : MonoBehaviour
 
     public GameObject CurrentSoldier { get => currentSoldier; }
     public PlayerController CurrentPlayer { get => turnController.CurrentPlayer; }
+    public ObservableCollection<SoldierMovement> Soldiers { get => soldiers; }
 
     private void Awake()
     {
@@ -58,6 +62,7 @@ public class GameController : MonoBehaviour
         {
             currentSoldier = obj;
             rangeDrawer.DrawRange(obj.transform.position, obj.GetComponent<SoldierController>().Data.Movement);
+            lightningController.SetLightning(obj);
         }
     }
 
