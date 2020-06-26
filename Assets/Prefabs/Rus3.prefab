@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fc7c4b4c911b14189a6cfc369ad232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinnedMesh: {fileID: 1089684642243294241}
+  skinnedMesh: {fileID: 6664542198100215300}
   OutlineStrength: 0.5
   IsSelected: 0
 --- !u!65 &2648227429780842201
@@ -1790,6 +1790,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.8211359
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 270f6f420da658f43b82d89988159cab,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 270f6f420da658f43b82d89988159cab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: cfcef833e25e62d44bbcdce400b1c2c3, type: 2}
     - target: {fileID: 919132149155446097, guid: 270f6f420da658f43b82d89988159cab,
         type: 3}
       propertyPath: m_Name
@@ -1800,6 +1810,12 @@ PrefabInstance:
 --- !u!4 &5491604339388759403 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 270f6f420da658f43b82d89988159cab,
+    type: 3}
+  m_PrefabInstance: {fileID: 5457413253359458944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6664542198100215300 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 270f6f420da658f43b82d89988159cab,
     type: 3}
   m_PrefabInstance: {fileID: 5457413253359458944}
   m_PrefabAsset: {fileID: 0}
