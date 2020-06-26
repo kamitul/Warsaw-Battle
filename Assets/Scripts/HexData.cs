@@ -10,7 +10,7 @@ public enum Type
 }
 
 [System.Serializable]
-public class HexData 
+public class HexData : Data
 {
     public Type Status;
 }

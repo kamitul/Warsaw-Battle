@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1038152161143958262}
   - component: {fileID: 1038152161143958249}
   - component: {fileID: 1038152161143958248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5992954487048283050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,9 @@ GameObject:
   - component: {fileID: 7760204868597895014}
   - component: {fileID: 6637763393002913987}
   - component: {fileID: 8933705607737193481}
-  m_Layer: 0
+  - component: {fileID: 6417924092171543318}
+  - component: {fileID: 1364233990425638622}
+  m_Layer: 8
   m_Name: PolObjective
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,6 +207,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6417924092171543318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6987925924989146588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cc65f077d06284b92c0672b0a6ff2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ownership: 0
+--- !u!65 &1364233990425638622
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6987925924989146588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 0.45, z: 2.5}
+  m_Center: {x: 0, y: 1.69, z: 0}
 --- !u!1 &8052837599935684412
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +245,7 @@ GameObject:
   - component: {fileID: 3806838079277745050}
   - component: {fileID: 5472582028429468493}
   - component: {fileID: 8978917538519275876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}

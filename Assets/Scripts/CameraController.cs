@@ -5,7 +5,7 @@ using DG;
 using DG.Tweening;
 using UnityEditor;
 
-public class CameraController : MonoBehaviour
+public class CameraController : Controller
 {
     [SerializeField]
     private MouseData mouseData = default;
@@ -73,5 +73,10 @@ public class CameraController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical") * Time.deltaTime * Speed;
         Vector3 move = camera.transform.right * horizontal + camera.transform.forward * vertical;
         camera.transform.position = Vector3.Lerp(camera.transform.position, camera.transform.position + move, Speed * Time.deltaTime);
+    }
+
+    public override Data GetData()
+    {
+        return cameraDatas[0];
     }
 }

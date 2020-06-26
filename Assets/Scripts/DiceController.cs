@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class DiceController : MonoBehaviour
+public class DiceController : Controller
 {
     [SerializeField]
     private DiceData diceData;
@@ -51,5 +51,10 @@ public class DiceController : MonoBehaviour
             rg.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
             rg.AddTorque(new Vector3(UnityEngine.Random.Range(0, 500), UnityEngine.Random.Range(0, 500), UnityEngine.Random.Range(0, 500)));
         }
+    }
+
+    public override Data GetData()
+    {
+        return diceData;
     }
 }

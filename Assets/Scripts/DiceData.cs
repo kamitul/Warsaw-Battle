@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class DiceData
+public class DiceData : Data
 {
     [SerializeField]
     private int points;

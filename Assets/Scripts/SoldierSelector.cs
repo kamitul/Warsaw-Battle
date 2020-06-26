@@ -6,7 +6,7 @@ using UnityEngine;
 public class SoldierSelector : MonoBehaviour
 {
     [SerializeField]
-    private SkinnedMeshRenderer skinnedMesh;
+    private Renderer skinnedMesh;
 
     public float OutlineStrength = 0.5f;
     public bool IsSelected = false;

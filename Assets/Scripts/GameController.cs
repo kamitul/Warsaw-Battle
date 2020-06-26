@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private TurnController turnController;
 
+    [SerializeField]
+    private LayerMask layer;
+
     private GameObject currentSoldier;
 
     private ObservableCollection<SoldierMovement> soldiers = new ObservableCollection<SoldierMovement>();
@@ -61,7 +64,7 @@ public class GameController : MonoBehaviour
         if (obj.GetComponent<SoldierController>().Data.Ownership == CurrentPlayer.Data.PlayerType)
         {
             currentSoldier = obj;
-            rangeDrawer.DrawRange(obj.transform.position, obj.GetComponent<SoldierController>().Data.Movement);
+            rangeDrawer.DrawRange(obj.transform.position, obj.GetComponent<SoldierController>().Data.Movement/1.5f);
             lightningController.SetLightning(obj);
         }
     }
@@ -89,7 +92,7 @@ public class GameController : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100.0f))
+        if (Physics.Raycast(ray, out hit, 100.0f, layer))
         {
             var tile = hit.collider.GetComponent<HexTile>();
             if (tile && tile.Data.Status == Type.REACHABLE)

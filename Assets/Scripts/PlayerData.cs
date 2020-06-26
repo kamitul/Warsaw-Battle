@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class PlayerData
+public class PlayerData : Data
 {
     [SerializeField]
     private float timer;
