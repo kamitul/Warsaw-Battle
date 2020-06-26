@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoldierController : MonoBehaviour
+public class SoldierController : Controller
 {
     [SerializeField]
     private SoldierData data;
@@ -11,6 +11,11 @@ public class SoldierController : MonoBehaviour
     private SoldierUIController soldierUI;
 
     public SoldierData Data { get => data; }
+
+    public override Data GetData()
+    {
+        return data;
+    }
 
     private void Awake()
     {

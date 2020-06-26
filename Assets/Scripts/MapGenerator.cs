@@ -24,6 +24,7 @@ public class MapGenerator : MonoBehaviour
     private List<MapPlacer> mapPlacers;
 
     public List<GameObject> HexTiles { get => hexTiles; }
+    public List<GameObject> Objectives { get => objectives; }
 
     private void Awake()
     {
@@ -44,9 +45,9 @@ public class MapGenerator : MonoBehaviour
             for (int x = 0; x < 15; x++)
             {
                 Vector3 position;
-                position.x = position.x = (x + z * 0.5f - z / 2) * (0.5f * 2f) * 0.4f;
+                position.x = position.x = (x + z * 0.5f - z / 2) * (0.5f * 2f) * 0.41f;
                 position.y = 0f;
-                position.z = z * (0.5f * 1.5f) * 0.5f;
+                position.z = z * (0.5f * 1.5f) * 0.485f;
                 var obj = Instantiate(hex, position, Quaternion.Euler(new Vector3(90, 0, 0)), parent);
                 hexTiles.Add(obj);
             }

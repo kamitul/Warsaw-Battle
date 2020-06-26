@@ -12,7 +12,7 @@ public enum PlayerType
 
 
 [System.Serializable]
-public class CameraData
+public class CameraData : Data
 {
     public Vector3 Position;
     public Vector3 Rotation;

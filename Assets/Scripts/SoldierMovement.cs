@@ -27,6 +27,7 @@ public class SoldierMovement : MonoBehaviour
 
     public void MoveToTile(Vector3 pos, float time)
     {
+        pos.y = transform.position.y;
         transform.DOMove(pos, time);
     }
 }

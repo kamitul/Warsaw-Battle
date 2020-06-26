@@ -1442,6 +1442,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529533047}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &554941611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554941612}
+  - component: {fileID: 554941613}
+  m_Layer: 0
+  m_Name: DataController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554941612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554941611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1009894280}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554941613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554941611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24023fb88272b10438081c4d5cb5c586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataHolders:
+  - {fileID: 1283903864}
+  - {fileID: 306420682}
+  - {fileID: 1386011825}
+  - {fileID: 1741574297}
 --- !u!1001 &618110284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1575,6 +1623,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &638795094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4937153340265663528, guid: 46b57d5fdbf594d4e940061687e9584c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2799398700666291035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &683210160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2629,6 +2689,9 @@ MonoBehaviour:
   rangeDrawer: {fileID: 76843211}
   lightningController: {fileID: 686418573}
   turnController: {fileID: 2005661056}
+  layer:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!1 &1009894279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2664,6 +2727,7 @@ Transform:
   - {fileID: 865533666}
   - {fileID: 686418572}
   - {fileID: 695559376}
+  - {fileID: 554941612}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3792,6 +3856,7 @@ GameObject:
   - component: {fileID: 1470409515}
   - component: {fileID: 1470409514}
   - component: {fileID: 1470409513}
+  - component: {fileID: 1470409517}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -3880,6 +3945,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1470409517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470409512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698b73a1d0e3c1445bfde3d751b17862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: {fileID: 638795094}
+  soldiders: {fileID: 1967803773}
+  gameController: {fileID: 1007435728}
 --- !u!1 &1564493647
 GameObject:
   m_ObjectHideFlags: 0
@@ -4175,6 +4255,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enviroPrefabs:
   - {fileID: 7157697386652838716, guid: 8c667ac2fe42d4946a5184dd3354fdc4, type: 3}
+  - {fileID: 7200047856709685341, guid: e36e08abc27d82741883ad874a1955cd, type: 3}
+  - {fileID: 1985046551330660875, guid: 5a7e865de416b8540adf4fe9dfac3777, type: 3}
+  - {fileID: 6805487723756398769, guid: 2b42d3abb6ff67c4eb60a7c4cddecf27, type: 3}
+  - {fileID: 2006264252548398308, guid: 64c0100797ed8284e9ba1436e0344090, type: 3}
+  - {fileID: 4210914859296063375, guid: c34db5a51a868b24a8fb3d4e95d032aa, type: 3}
 --- !u!1001 &1833867181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4316,6 +4401,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1967803773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4937153340265663528, guid: 46b57d5fdbf594d4e940061687e9584c,
+    type: 3}
+  m_PrefabInstance: {fileID: 332958678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2005661054
 GameObject:
   m_ObjectHideFlags: 0
@@ -4326,6 +4423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2005661055}
   - component: {fileID: 2005661056}
+  - component: {fileID: 2005661057}
   m_Layer: 0
   m_Name: TurnController
   m_TagString: Untagged
@@ -4362,29 +4460,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraController: {fileID: 1741574297}
+  mapGenerator: {fileID: 76843209}
+  turnBinder: {fileID: 2005661057}
   player1: {fileID: 1283903864}
   player2: {fileID: 306420682}
   initialTroops:
   - Soldier: {fileID: 8542221940529583656, guid: 0376e353bfd5a63469a352af5ca230fd,
       type: 3}
     Positions:
-    - Position: {x: 0.934, y: 1.054, z: 0.375}
+    - Position: {x: 0.532, y: 1.041, z: -0.624}
       Ownership: 1
-    - Position: {x: 1.267, y: 1.054, z: -6.862}
+  - Soldier: {fileID: 1700416900110433224, guid: 8efa491b19fc41041a1cb91ecf8f38c1,
+      type: 3}
+    Positions:
+    - Position: {x: 1.267, y: 1.041, z: -6}
       Ownership: 0
   - Soldier: {fileID: 9020383663196665528, guid: 4b60f90972a56004d843c6f8630f556f,
       type: 3}
     Positions:
-    - Position: {x: 0.311, y: 1.054, z: -0.582}
+    - Position: {x: 1.222, y: 1.041, z: -0.818}
       Ownership: 1
-    - Position: {x: 2.07, y: 1.045, z: -5.47}
+  - Soldier: {fileID: 3284528532024508409, guid: 50e32bfb751e79d4488bc80892f34b74,
+      type: 3}
+    Positions:
+    - Position: {x: 2.07, y: 1.041, z: -5.784}
       Ownership: 0
   - Soldier: {fileID: 9143880518980657711, guid: 242b7d22379064341ba837dcf0047938,
       type: 3}
     Positions:
-    - Position: {x: 1.396, y: 1.045, z: -0.619}
+    - Position: {x: 1.164, y: 1.041, z: 0.281}
       Ownership: 1
-    - Position: {x: 0.43, y: 1.054, z: -7.11}
+  - Soldier: {fileID: 921728905228387545, guid: 9bc96e9f7f3dd7146a84a655bf270259,
+      type: 3}
+    Positions:
+    - Position: {x: 0.615, y: 1.041, z: -6.926}
+      Ownership: 0
+  - Soldier: {fileID: 1983667328897263487, guid: b0a0fb5d606534f4f9a7d1a33f1dff3d,
+      type: 3}
+    Positions:
+    - Position: {x: 1.82, y: 1.041, z: 0.1}
+      Ownership: 1
+  - Soldier: {fileID: 1752114334230848088, guid: aab70367e6334a04b94b072aad2b107c,
+      type: 3}
+    Positions:
+    - Position: {x: 1.71, y: 1.041, z: -7}
       Ownership: 0
   dicePlaces:
   - Position: {x: 4.592, y: 0.631, z: -5.721}
@@ -4393,6 +4512,21 @@ MonoBehaviour:
     Ownership: 1
   dice: {fileID: 1386011825}
   CurrentPlayer: {fileID: 0}
+  turnables:
+  - {fileID: 1470409517}
+--- !u!114 &2005661057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005661054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6d00d2b8809cd41969abc37f84de00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameUIController: {fileID: 1470409517}
 --- !u!1 &2035868548
 GameObject:
   m_ObjectHideFlags: 0

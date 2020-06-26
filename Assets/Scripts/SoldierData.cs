@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [System.Serializable]
-public class SoldierData
+public class SoldierData : Data
 {
     [SerializeField]
     private int amount;

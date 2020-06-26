@@ -19,10 +19,16 @@ public class Troop
     public List<Place> Positions;
 }
 
-public class TurnController : MonoBehaviour
+public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
 {
     [SerializeField]
     private CameraController cameraController;
+
+    [SerializeField]
+    private MapGenerator mapGenerator;
+
+    [SerializeField]
+    private TurnBinder turnBinder;
 
     [SerializeField]
     private PlayerController player1;
@@ -42,6 +48,20 @@ public class TurnController : MonoBehaviour
     [HideInInspector]
     public PlayerController CurrentPlayer;
 
+    public Dictionary<PlayerType, PlayerController> Players = new Dictionary<PlayerType, PlayerController>();
+
+    [SerializeField]
+    private List<TurnObject> turnables;
+
+    private void Awake()
+    {
+        for(int i = 0; i < mapGenerator.Objectives.Count; ++i)
+        {
+            turnables = turnables.Prepend(mapGenerator.Objectives[i].GetComponent<TurnObject>()).ToList();
+        }
+        turnBinder.Bind();
+    }
+
     public List<GameObject> Initialize()
     {
         var player1Troops = SpawnStartTroops(PlayerType.PLAYER1);
@@ -58,9 +78,13 @@ public class TurnController : MonoBehaviour
         List<GameObject> ret = new List<GameObject>();
         for(int i = 0; i < initialTroops.Count; ++i)
         {
-            Vector3 position = initialTroops[i].Positions.Find(x => x.Ownership == pl).Position;
-            var obj = Instantiate(initialTroops[i].Soldier, position, Quaternion.identity, null);
-            ret.Add(obj);
+            var troop = initialTroops[i].Positions.Find(x => x.Ownership == pl);
+            if (troop != null)
+            {
+                Vector3 position = troop.Position;
+                var obj = Instantiate(initialTroops[i].Soldier, position, Quaternion.identity, null);
+                ret.Add(obj);
+            }
         }
         return ret;
     }
@@ -73,6 +97,27 @@ public class TurnController : MonoBehaviour
             cameraController.MoveToPoint(CurrentPlayer.Data.PlayerType);
             dice.Data.Rolled = false;
             dice.transform.position = dicePlaces.Find(x => x.Ownership == CurrentPlayer.Data.PlayerType).Position;
+            ProcessTurnables();
         }
+    }
+
+    private void ProcessTurnables()
+    {
+        for(int i = 0; i < turnables.Count; ++i)
+        {
+            (turnables[i] as ITurnable).EndTurn();
+        }
+    }
+
+    public void OnBeforeSerialize()
+    {
+        Players.Clear();
+        Players.Add(player1.Data.PlayerType, player1);
+        Players.Add(player2.Data.PlayerType, player2);
+    }
+
+    public void OnAfterDeserialize()
+    {
+        
     }
 }
