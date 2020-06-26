@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum Position
+public enum PlayerType
 {
     PLAYER1,
     PLAYER2,
-    BACK
+    NOTHING
 }
 
 
@@ -17,5 +17,5 @@ public class CameraData
     public Vector3 Position;
     public Vector3 Rotation;
     public float Speed;
-    public Position Type;
+    public PlayerType Type;
 }

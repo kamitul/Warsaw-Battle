@@ -17,16 +17,25 @@ public class PlayerData
     private int coins;
 
     [SerializeField]
-    private Position playerType;
+    private PlayerType playerType;
 
     public Action<PlayerData> DataChanged;
 
-    public PlayerData(int timer, List<GameObject> startTroops, int coins, Position type)
+    public PlayerData(int timer, List<GameObject> startTroops, int coins, PlayerType type)
     {
         this.timer = timer;
         this.soldiers = startTroops;
         this.coins = coins;
         this.playerType = type;
+        SetTroops();
+    }
+
+    private void SetTroops()
+    {
+        for(int i = 0; i < soldiers.Count; ++i)
+        {
+            soldiers[i].GetComponent<SoldierController>().Data.Ownership = playerType;
+        }
     }
 
     public int Coins
@@ -59,7 +68,7 @@ public class PlayerData
         }
     }
 
-    public Position PlayerType
+    public PlayerType PlayerType
     {
         get => playerType;
         set

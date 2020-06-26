@@ -15,6 +15,8 @@ public class SoldierData
     private float hp;
     [SerializeField]
     private float movement;
+    [SerializeField]
+    private PlayerType ownType;
 
     [HideInInspector]
     public float TotalDamage;
@@ -57,6 +59,16 @@ public class SoldierData
         set
         {
             movement = value;
+            DataChanged.Invoke(this);
+        }
+    }
+
+    public PlayerType Ownership
+    {
+        get => ownType;
+        set
+        {
+            ownType = value;
             DataChanged.Invoke(this);
         }
     }
