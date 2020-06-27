@@ -6376,7 +6376,7 @@ MonoBehaviour:
   - Soldier: {fileID: 1700416900110433224, guid: 8efa491b19fc41041a1cb91ecf8f38c1,
       type: 3}
     Positions:
-    - Position: {x: 1.267, y: 1.041, z: -6}
+    - Position: {x: 1.267, y: 0.9781, z: -6}
       Ownership: 0
   - Soldier: {fileID: 9020383663196665528, guid: 4b60f90972a56004d843c6f8630f556f,
       type: 3}
@@ -6386,7 +6386,7 @@ MonoBehaviour:
   - Soldier: {fileID: 3284528532024508409, guid: 50e32bfb751e79d4488bc80892f34b74,
       type: 3}
     Positions:
-    - Position: {x: 2.07, y: 1.041, z: -5.784}
+    - Position: {x: 2.07, y: 1.04, z: -5.784}
       Ownership: 0
   - Soldier: {fileID: 9143880518980657711, guid: 242b7d22379064341ba837dcf0047938,
       type: 3}
@@ -6396,7 +6396,7 @@ MonoBehaviour:
   - Soldier: {fileID: 921728905228387545, guid: 9bc96e9f7f3dd7146a84a655bf270259,
       type: 3}
     Positions:
-    - Position: {x: 0.615, y: 1.041, z: -6.926}
+    - Position: {x: 0.615, y: 1.071, z: -6.926}
       Ownership: 0
   - Soldier: {fileID: 1983667328897263487, guid: b0a0fb5d606534f4f9a7d1a33f1dff3d,
       type: 3}

@@ -13,4 +13,5 @@ public enum Type
 public class HexData : Data
 {
     public Type Status;
+    public GameObject CurrentObj;
 }
