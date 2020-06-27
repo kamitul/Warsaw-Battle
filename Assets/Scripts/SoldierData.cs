@@ -17,6 +17,10 @@ public class SoldierData : Data
     private float movement;
     [SerializeField]
     private float attackRange;
+    [SerializeField]
+    private int maxActionsPerTurn;
+    [SerializeField]
+    private int actionsRemaining;
 
     [SerializeField]
     private PlayerType ownType;
@@ -74,6 +78,21 @@ public class SoldierData : Data
             attackRange = value;
             DataChanged.Invoke(this);
         }
+    }
+
+    public int ActionsRemaining
+    {
+        get => actionsRemaining;
+        set
+        {
+            actionsRemaining = value;
+            DataChanged.Invoke(this);
+        }
+    }
+
+    public int MaxActionsPerTurn
+    {
+        get => maxActionsPerTurn;
     }
 
     public PlayerType Ownership

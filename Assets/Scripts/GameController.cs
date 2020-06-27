@@ -91,14 +91,18 @@ public class GameController : MonoBehaviour
 
     private void PerformSoldierAction()
     {
+        if (currentSoldier.GetComponent<SoldierController>().Data.ActionsRemaining <= 0)
+        {
+            Debug.Log("No actions remaining for this unit");
+            return;
+        }
+
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 100.0f, layer))
         {
             var tile = hit.collider.GetComponent<HexTile>();
-            if (tile)
-                Debug.Log(tile.Data.Status);
 
             if (tile && tile.Data.Status == Type.REACHABLE)
             {
@@ -107,8 +111,10 @@ public class GameController : MonoBehaviour
                 sol.MoveToTile(tile.transform.position, (tile.transform.position - sol.transform.position).sqrMagnitude);
                 tile.Data.Status = Type.UNIT;
                 ResetMovement();
+                currentSoldier.GetComponent<SoldierController>().Data.ActionsRemaining--;
                 currentSoldier = null;
                 rangeDrawer.Redraw();
+
             }
             else if (tile && tile.Data.Status == Type.UNIT)
             {
@@ -117,11 +123,10 @@ public class GameController : MonoBehaviour
                 if (clickedSoldier && clickedSoldier.Data.Ownership != CurrentPlayer.Data.PlayerType)
                 {
                     bool rangeResult = GaugeAttackRange(currentSoldier, tile.Data.CurrentObj);
-
                     if (rangeResult)
                     {
-
                         PerformAttack(currentSoldier.GetComponent<SoldierController>(), clickedSoldier);
+                        currentSoldier.GetComponent<SoldierController>().Data.ActionsRemaining--;
                     }
                 }
             }
@@ -140,6 +145,7 @@ public class GameController : MonoBehaviour
     private void PerformAttack(SoldierController currentSoldier, SoldierController clickedSoldier)
     {
         clickedSoldier.Data.HP -= currentSoldier.Data.Damage;
+        Debug.Log(clickedSoldier.Data.HP);
     }
 
     private void ResetMovement()

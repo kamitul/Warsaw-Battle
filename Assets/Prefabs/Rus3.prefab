@@ -1387,6 +1387,8 @@ MonoBehaviour:
     hp: 100
     movement: 0
     attackRange: 1
+    maxActionsPerTurn: 2
+    actionsRemaining: 2
     ownType: 1
     TotalDamage: 0
   soldierUI: {fileID: -7651894498541363316}
