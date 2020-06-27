@@ -13,13 +13,22 @@ public class SoldierMovement : MonoBehaviour
     [SerializeField]
     private Vector3 offset;
 
+    [SerializeField]
+    private TroopSoundPlayer troopSoundPlayer;
+
     public Action OnDeselected;
     public Action<GameObject> OnSelected;
 
     public SoldierSelector SoldierSelector { get => soldierSelector; }
 
+    private void Awake()
+    {
+        troopSoundPlayer = GetComponent<TroopSoundPlayer>();
+    }
+
     private void OnMouseDown()
     {
+        troopSoundPlayer.Click();
         OnDeselected.Invoke();
         SoldierSelector.Select();
         OnSelected.Invoke(gameObject);
@@ -27,6 +36,7 @@ public class SoldierMovement : MonoBehaviour
 
     public void MoveToTile(Vector3 pos, float time)
     {
+        troopSoundPlayer.Move();
         pos.y = transform.position.y;
         transform.DOMove(pos, time);
     }

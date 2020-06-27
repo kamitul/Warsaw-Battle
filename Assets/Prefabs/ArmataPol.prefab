@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soldierSelector: {fileID: 197057021459573495}
   offset: {x: 0, y: 0, z: 0}
+  troopSoundPlayer: {fileID: 6799629753338078668}
 --- !u!114 &197057021459573495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,10 +196,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverClips: []
-  clcikClips: []
-  attackSounds: []
-  shoutSounds: []
-  moveSounds: []
+  clcikClips:
+  - {fileID: 8300000, guid: b83261e9cb005c240b195b4a8a96d047, type: 3}
+  attackSounds:
+  - {fileID: 8300000, guid: 4a8654fd033eccb42b7ae0bffd989277, type: 3}
+  shoutSounds:
+  - {fileID: 8300000, guid: 83b8c2ea50af4594eb2d082dfd4c35b8, type: 3}
+  moveSounds:
+  - {fileID: 8300000, guid: be0fb5e0b71468241950262051d68482, type: 3}
 --- !u!82 &-7454363433327347311
 AudioSource:
   m_ObjectHideFlags: 0
