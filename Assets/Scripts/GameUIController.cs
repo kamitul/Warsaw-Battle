@@ -3,30 +3,49 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameUIController : TurnObject, ITurnable
+public class GameUIController : TurnObject, ITurnable, IInitiable
 {
+    [SerializeField]
+    private List<GameObject> screens;
+
     [SerializeField]
     private TextMeshProUGUI coins;
 
     [SerializeField]
     private TextMeshProUGUI soldiders;
 
-    [SerializeField]
-    private GameController gameController;
-
-    private Dictionary<PlayerType, PlayerController> playerUIData;
-
-    public void Bind()
+    public void EndTurn(PlayerController pl)
     {
-        playerUIData = new Dictionary<PlayerType, PlayerController>();
-        playerUIData.Add(PlayerType.PLAYER1, DataController.Instance.GetController<PlayerController>(PlayerType.PLAYER1));
-        playerUIData.Add(PlayerType.PLAYER2, DataController.Instance.GetController<PlayerController>(PlayerType.PLAYER2));
+        coins.text = pl.Data.Coins.ToString();
+        soldiders.text = pl.Data.Soldiers.Count.ToString();
     }
 
-    public void EndTurn()
+    public void Initialize(PlayerController pl)
     {
-        coins.text = playerUIData[gameController.CurrentPlayer.Data.PlayerType].Data.Coins.ToString();
-        soldiders.text = playerUIData[gameController.CurrentPlayer.Data.PlayerType].Data.Soldiers.Count.ToString();
+        coins.text = pl.Data.Coins.ToString();
+        soldiders.text = pl.Data.Soldiers.Count.ToString();
+    }
+
+    public void OpenScreen(string name)
+    {
+        for (int i = 0; i < screens.Count; ++i)
+        {
+            screens[i].SetActive(false);
+        }
+        GameObject screen = screens.Find(x => x.name == name);
+        screen.SetActive(true);
+    }
+
+    public void DisableScreen(string name)
+    {
+        GameObject screen = screens.Find(x => x.name == name);
+        screen.SetActive(false);
+    }
+
+    public void Quit()
+    {
+        SceneManager.LoadScene(0);
     }
 }

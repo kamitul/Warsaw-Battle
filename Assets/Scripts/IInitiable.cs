@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ITurnable
+public interface IInitiable
 {
-    void EndTurn(PlayerController pl);
+    void Initialize(PlayerController pl);
 }

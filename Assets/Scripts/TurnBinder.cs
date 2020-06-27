@@ -9,6 +9,6 @@ public class TurnBinder : MonoBehaviour
 
     public void Bind()
     {
-        gameUIController.Bind();
+        //
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ObjectiveController : TurnObject, ITurnable
+public class ObjectiveController : TurnObject, ITurnable, IInitiable
 {
     protected List<SoldierController> soldiers;
     public PlayerType Ownership;
@@ -27,7 +27,7 @@ public class ObjectiveController : TurnObject, ITurnable
             soldiers.Remove(sol);
     }
 
-    public void EndTurn()
+    public void EndTurn(PlayerController pl)
     {
         Dictionary<PlayerType, int> counts = new Dictionary<PlayerType, int>()
         {
@@ -46,5 +46,10 @@ public class ObjectiveController : TurnObject, ITurnable
             DataController.Instance.GetController<PlayerController>(mostUnits.Key).Data.Coins += mostUnits.Value * 50;
         else
             DataController.Instance.GetController<PlayerController>(mostUnits.Key).Data.Coins += mostUnits.Value * 150;
+    }
+
+    public void Initialize(PlayerController pl)
+    {
+        
     }
 }

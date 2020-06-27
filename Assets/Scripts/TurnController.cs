@@ -28,9 +28,6 @@ public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
     private MapGenerator mapGenerator;
 
     [SerializeField]
-    private TurnBinder turnBinder;
-
-    [SerializeField]
     private PlayerController player1;
 
     [SerializeField]
@@ -59,7 +56,7 @@ public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
         {
             turnables = turnables.Prepend(mapGenerator.Objectives[i].GetComponent<TurnObject>()).ToList();
         }
-        turnBinder.Bind();
+        TurnablesInit();
     }
 
     public List<GameObject> Initialize()
@@ -97,15 +94,23 @@ public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
             cameraController.MoveToPoint(CurrentPlayer.Data.PlayerType);
             dice.Data.Rolled = false;
             dice.transform.position = dicePlaces.Find(x => x.Ownership == CurrentPlayer.Data.PlayerType).Position;
-            ProcessTurnables();
+            TurnablesEndTurn();
         }
     }
 
-    private void ProcessTurnables()
+    private void TurnablesEndTurn()
     {
         for(int i = 0; i < turnables.Count; ++i)
         {
-            (turnables[i] as ITurnable).EndTurn();
+            (turnables[i] as ITurnable).EndTurn(CurrentPlayer);
+        }
+    }
+
+    private void TurnablesInit()
+    {
+        for (int i = 0; i < turnables.Count; ++i)
+        {
+            (turnables[i] as IInitiable).Initialize(CurrentPlayer);
         }
     }
 
