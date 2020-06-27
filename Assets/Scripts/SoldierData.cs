@@ -4,6 +4,19 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+public enum EnemyType
+{
+    RUS1,
+    POL1,
+    RUS2,
+    POL2,
+    RUS3,
+    POL3,
+    ARM_RUS,
+    ARM_POL
+}
+
+
 [System.Serializable]
 public class SoldierData : Data
 {
@@ -17,6 +30,8 @@ public class SoldierData : Data
     private float movement;
     [SerializeField]
     private PlayerType ownType;
+    [SerializeField]
+    private EnemyType enemyType;
 
     [HideInInspector]
     public float TotalDamage;
@@ -70,6 +85,15 @@ public class SoldierData : Data
         {
             ownType = value;
             DataChanged.Invoke(this);
+        }
+    }
+
+    public EnemyType Type
+    {
+        get => enemyType;
+        set
+        {
+            enemyType = value;
         }
     }
 }

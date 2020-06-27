@@ -13,4 +13,15 @@ public class HexTile : Controller
     {
         return hexData;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!Data.CurrentObj)
+            Data.CurrentObj = other.gameObject;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Data.CurrentObj = null;
+    }
 }

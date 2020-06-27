@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexData:
     Status: 0
+    CurrentObj: {fileID: 0}
 --- !u!65 &102212705131665834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -103,8 +104,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5649210345255302163}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43301272, y: 0.4, z: 0.00025101946}
+  m_Size: {x: 0.43301272, y: 0.4, z: 0.01}
   m_Center: {x: 0, y: 0, z: 0.00012550973}
