@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3284528531155288978}
   - component: {fileID: 3284528531155288976}
   - component: {fileID: 3284528531155288977}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mauser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -3628273247418741236}
   - component: {fileID: -4582649606481921660}
   - component: {fileID: 8062906638447526897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SoldierPL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +139,7 @@ MonoBehaviour:
     damage: 5
     hp: 100
     movement: 0
+    attackRange: 1
     ownType: 1
     TotalDamage: 0
   soldierUI: {fileID: 8936453262577710147}
@@ -343,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2656516989426939485}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ZolnierzPL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +377,7 @@ GameObject:
   - component: {fileID: 6532919790982423720}
   - component: {fileID: 3894938168055119884}
   - component: {fileID: 981372038302523873}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sold.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,6 +541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PodstawkaPol (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb61663c3ff5fa5488f1855479891491,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb61663c3ff5fa5488f1855479891491, type: 3}
 --- !u!4 &2062713291127069267 stripped
@@ -580,6 +586,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284666411728080262, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 551448790252700016, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4546801556225421584, guid: 79f30b309e640954bba71fbc34d7e2a7,
         type: 3}
@@ -651,10 +667,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.7021277
       objectReference: {fileID: 0}
+    - target: {fileID: 6252610220362998092, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985279795322284703, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933650494066040650, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8344659026802503309, guid: 79f30b309e640954bba71fbc34d7e2a7,
         type: 3}
       propertyPath: m_Name
       value: Flag
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344659026802503309, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79f30b309e640954bba71fbc34d7e2a7, type: 3}

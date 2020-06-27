@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 539420182270096607}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ZolnierzPL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 921728904980558420}
   - component: {fileID: 921728904980558426}
   - component: {fileID: 921728904980558427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mauser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: -3954658286899617734}
   - component: {fileID: 4112465360154749802}
   - component: {fileID: -5857567121787439114}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SoldierPL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,6 +171,7 @@ MonoBehaviour:
     damage: 20
     hp: 100
     movement: 0
+    attackRange: 1
     ownType: 0
     TotalDamage: 0
   soldierUI: {fileID: 7485767532924735708}
@@ -377,7 +378,7 @@ GameObject:
   - component: {fileID: 5666564188430801576}
   - component: {fileID: 5909086518824287549}
   - component: {fileID: 5049250837552251858}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +457,7 @@ GameObject:
   - component: {fileID: 8721264673461626410}
   - component: {fileID: 1561665278977163918}
   - component: {fileID: 3332443031351747427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sold.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,6 +621,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PodstawkaPol
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb61663c3ff5fa5488f1855479891491,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb61663c3ff5fa5488f1855479891491, type: 3}
 --- !u!4 &810677564347792909 stripped
@@ -660,6 +666,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284666411728080262, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 551448790252700016, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4546801556225421584, guid: 79f30b309e640954bba71fbc34d7e2a7,
         type: 3}
@@ -731,10 +747,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.8181819
       objectReference: {fileID: 0}
+    - target: {fileID: 6252610220362998092, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985279795322284703, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933650494066040650, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8344659026802503309, guid: 79f30b309e640954bba71fbc34d7e2a7,
         type: 3}
       propertyPath: m_Name
       value: Flag
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344659026802503309, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79f30b309e640954bba71fbc34d7e2a7, type: 3}

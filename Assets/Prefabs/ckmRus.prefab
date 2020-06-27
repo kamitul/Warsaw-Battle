@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3743930170281186542}
   - component: {fileID: -2001659595988613089}
   - component: {fileID: 6096273227940102559}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ckmRus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,6 +87,7 @@ MonoBehaviour:
     damage: 100
     hp: 20
     movement: 1
+    attackRange: 3
     ownType: 0
     TotalDamage: 0
   soldierUI: {fileID: 3743930170281186542}
@@ -332,6 +333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PodstawkaRus
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 270f6f420da658f43b82d89988159cab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 270f6f420da658f43b82d89988159cab, type: 3}
 --- !u!4 &2021517624654319850 stripped
@@ -432,6 +438,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ckm1Rus
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1eceae458271d7b4ca2ec02eaf2fca93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eceae458271d7b4ca2ec02eaf2fca93, type: 3}
 --- !u!4 &4330773463716748117 stripped
@@ -472,6 +483,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284666411728080262, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 551448790252700016, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4546801556225421584, guid: 79f30b309e640954bba71fbc34d7e2a7,
         type: 3}
@@ -543,10 +564,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 12.2909155
       objectReference: {fileID: 0}
+    - target: {fileID: 6252610220362998092, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985279795322284703, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933650494066040650, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8344659026802503309, guid: 79f30b309e640954bba71fbc34d7e2a7,
         type: 3}
       propertyPath: m_Name
       value: Flag
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344659026802503309, guid: 79f30b309e640954bba71fbc34d7e2a7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79f30b309e640954bba71fbc34d7e2a7, type: 3}

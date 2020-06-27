@@ -52,7 +52,7 @@ public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
 
     private void Awake()
     {
-        for(int i = 0; i < mapGenerator.Objectives.Count; ++i)
+        for (int i = 0; i < mapGenerator.Objectives.Count; ++i)
         {
             turnables = turnables.Prepend(mapGenerator.Objectives[i].GetComponent<TurnObject>()).ToList();
         }
@@ -73,7 +73,7 @@ public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
     private List<GameObject> SpawnStartTroops(PlayerType pl)
     {
         List<GameObject> ret = new List<GameObject>();
-        for(int i = 0; i < initialTroops.Count; ++i)
+        for (int i = 0; i < initialTroops.Count; ++i)
         {
             var troop = initialTroops[i].Positions.Find(x => x.Ownership == pl);
             if (troop != null)
@@ -100,7 +100,7 @@ public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
 
     private void TurnablesEndTurn()
     {
-        for(int i = 0; i < turnables.Count; ++i)
+        for (int i = 0; i < turnables.Count; ++i)
         {
             (turnables[i] as ITurnable).EndTurn(CurrentPlayer);
         }
@@ -123,6 +123,6 @@ public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
 
     public void OnAfterDeserialize()
     {
-        
+
     }
 }

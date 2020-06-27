@@ -16,6 +16,9 @@ public class SoldierData : Data
     [SerializeField]
     private float movement;
     [SerializeField]
+    private float attackRange;
+
+    [SerializeField]
     private PlayerType ownType;
 
     [HideInInspector]
@@ -23,14 +26,14 @@ public class SoldierData : Data
 
     public Action<SoldierData> DataChanged;
 
-    public int Amount 
-    { 
+    public int Amount
+    {
         get => amount;
-        set 
-        { 
+        set
+        {
             amount = value;
             DataChanged.Invoke(this);
-        } 
+        }
     }
 
     public float Damage
@@ -59,6 +62,16 @@ public class SoldierData : Data
         set
         {
             movement = value;
+            DataChanged.Invoke(this);
+        }
+    }
+
+    public float AttackRange
+    {
+        get => attackRange;
+        set
+        {
+            attackRange = value;
             DataChanged.Invoke(this);
         }
     }

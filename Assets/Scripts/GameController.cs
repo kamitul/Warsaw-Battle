@@ -64,7 +64,7 @@ public class GameController : MonoBehaviour
         if (obj.GetComponent<SoldierController>().Data.Ownership == CurrentPlayer.Data.PlayerType)
         {
             currentSoldier = obj;
-            rangeDrawer.DrawRange(obj.transform.position, obj.GetComponent<SoldierController>().Data.Movement/1.5f);
+            rangeDrawer.DrawRange(obj.transform.position, obj.GetComponent<SoldierController>().Data.Movement / 1.5f);
             lightningController.SetLightning(obj);
         }
     }
@@ -72,7 +72,9 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         if (currentSoldier)
-            MoveObject();
+        {
+            PerformAction();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             currentSoldier = null;
@@ -81,28 +83,63 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void MoveObject()
+    private void PerformAction()
     {
-        SoldierMovement sol = currentSoldier.GetComponent<SoldierMovement>();
         if (Input.GetMouseButtonDown(0))
-            MoveSoldier(sol);
+            PerformSoldierAction();
     }
 
-    private void MoveSoldier(SoldierMovement sol)
+    private void PerformSoldierAction()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
         if (Physics.Raycast(ray, out hit, 100.0f, layer))
         {
             var tile = hit.collider.GetComponent<HexTile>();
+            if (tile)
+                Debug.Log(tile.Data.Status);
+
             if (tile && tile.Data.Status == Type.REACHABLE)
             {
+                Debug.Log("move");
+                SoldierMovement sol = currentSoldier.GetComponent<SoldierMovement>();
                 sol.MoveToTile(tile.transform.position, (tile.transform.position - sol.transform.position).sqrMagnitude);
+                tile.Data.Status = Type.UNIT;
                 ResetMovement();
                 currentSoldier = null;
                 rangeDrawer.Redraw();
             }
+            else if (tile && tile.Data.Status == Type.UNIT)
+            {
+                SoldierController clickedSoldier = tile.Data.CurrentObj.GetComponent<SoldierController>();
+
+                if (clickedSoldier && clickedSoldier.Data.Ownership != CurrentPlayer.Data.PlayerType)
+                {
+                    bool rangeResult = GaugeAttackRange(currentSoldier, tile.Data.CurrentObj);
+
+                    if (rangeResult)
+                    {
+
+                        PerformAttack(currentSoldier.GetComponent<SoldierController>(), clickedSoldier);
+                    }
+                }
+            }
         }
+    }
+
+    private bool GaugeAttackRange(GameObject currentSoldier, GameObject clickedSoldier)
+    {
+        SoldierController currentCtrl = currentSoldier.GetComponent<SoldierController>();
+
+        Debug.Log(currentCtrl.Data.AttackRange * HexTile.HexSize + " " + Vector3.Distance(currentSoldier.transform.position, clickedSoldier.transform.position));
+
+        return currentCtrl.Data.AttackRange * HexTile.HexSize >= Vector3.Distance(currentSoldier.transform.position, clickedSoldier.transform.position);
+    }
+
+    private void PerformAttack(SoldierController currentSoldier, SoldierController clickedSoldier)
+    {
+        clickedSoldier.Data.HP -= currentSoldier.Data.Damage;
     }
 
     private void ResetMovement()
