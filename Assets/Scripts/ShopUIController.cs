@@ -13,7 +13,7 @@ public class PlayerUI
 public class ShopUIController : TurnObject, ITurnable, IInitiable
 {
     [SerializeField]
-    private List<Image> troops;
+    private List<UITroop> troops;
 
     [SerializeField]
     private List<PlayerUI> playerUIs;
@@ -23,7 +23,16 @@ public class ShopUIController : TurnObject, ITurnable, IInitiable
         var currPlayer = playerUIs.FindAll(x => x.Type == pl.Data.PlayerType);
         for(int i = 0; i < troops.Count; ++i)
         {
-            troops[i].sprite = currPlayer[i].Icon;
+            switch(pl.Data.PlayerType)
+            {
+                case PlayerType.PLAYER1:
+                    troops[i].Type++;
+                    break;
+                case PlayerType.PLAYER2:
+                    troops[i].Type--;
+                    break;
+            }
+            troops[i].Image.sprite = currPlayer[i].Icon;
         }
     }
 
@@ -32,7 +41,7 @@ public class ShopUIController : TurnObject, ITurnable, IInitiable
         var currPlayer = playerUIs.FindAll(x => x.Type == pl.Data.PlayerType);
         for (int i = 0; i < troops.Count; ++i)
         {
-            troops[i].sprite = currPlayer[i].Icon;
+            troops[i].Image.sprite = currPlayer[i].Icon;
         }
     }
 }
