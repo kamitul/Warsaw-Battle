@@ -1339,6 +1339,7 @@ GameObject:
   - component: {fileID: -7651894498541363316}
   - component: {fileID: -3346528174723553202}
   - component: {fileID: -6642006868651580699}
+  - component: {fileID: 4244407334273766216}
   - component: {fileID: 6727222692454658787}
   - component: {fileID: 7016768820769101674}
   - component: {fileID: 3632976038983042871}
@@ -1449,6 +1450,19 @@ MonoBehaviour:
   skinnedMesh: {fileID: 6664542198100215300}
   OutlineStrength: 0.5
   IsSelected: 0
+--- !u!114 &4244407334273766216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143880518980657711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906fcb3a251d29c45a7b682016d59e6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierController: {fileID: 4010924261793529352}
 --- !u!65 &6727222692454658787
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -125,7 +125,7 @@ public class GameController : MonoBehaviour
                     bool rangeResult = GaugeAttackRange(currentSoldier, tile.Data.CurrentObj);
                     if (rangeResult)
                     {
-                        PerformAttack(currentSoldier.GetComponent<SoldierController>(), clickedSoldier);
+                        PerformAttack(currentSoldier, tile.Data.CurrentObj);
                         currentSoldier.GetComponent<SoldierController>().Data.ActionsRemaining--;
                     }
                 }
@@ -142,10 +142,9 @@ public class GameController : MonoBehaviour
         return currentCtrl.Data.AttackRange * HexTile.HexSize >= Vector3.Distance(currentSoldier.transform.position, clickedSoldier.transform.position);
     }
 
-    private void PerformAttack(SoldierController currentSoldier, SoldierController clickedSoldier)
+    private void PerformAttack(GameObject currentSoldier, GameObject clickedSoldier)
     {
-        clickedSoldier.Data.HP -= currentSoldier.Data.Damage;
-        Debug.Log(clickedSoldier.Data.HP);
+        clickedSoldier.GetComponent<SoldierCombatController>().takeDamage(currentSoldier.GetComponent<SoldierCombatController>().DamageDealt);
     }
 
     private void ResetMovement()
