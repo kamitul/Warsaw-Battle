@@ -9,6 +9,9 @@ public class DiceRoller : MonoBehaviour
     private GameController gameController;
 
     [SerializeField]
+    private UnitsController unitsController;
+
+    [SerializeField]
     private DiceController diceController;
 
     private void OnEnable()
@@ -23,11 +26,11 @@ public class DiceRoller : MonoBehaviour
 
     private void UpdateMovement(DiceData obj)
     {
-        for(int i =0; i < gameController.Soldiers.Count; ++i)
+        for (int i = 0; i < unitsController.Soldiers.Count; ++i)
         {
-            var sol = gameController.Soldiers[i].GetComponent<SoldierController>();
+            var sol = unitsController.Soldiers[i].GetComponent<SoldierController>();
             if (sol.Data.Ownership == gameController.CurrentPlayer.Data.PlayerType)
                 sol.Data.Movement = obj.Points;
-        }
+        }      
     }
 }

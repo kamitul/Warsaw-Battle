@@ -6,6 +6,7 @@ public class SoldierCombatController : MonoBehaviour
     [SerializeField] private SoldierController soldierController;
 
     public Action<int> OnDamageTaken;
+    public Action<GameObject> OnDestroy;
 
     public float DamageDealt
     {
@@ -27,7 +28,6 @@ public class SoldierCombatController : MonoBehaviour
 
     private void ExecuteDeath()
     {
-        Debug.Log("Death of " + gameObject);
-        // ?
+        OnDestroy?.Invoke(gameObject);
     }
 }

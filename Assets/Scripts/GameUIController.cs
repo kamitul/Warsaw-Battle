@@ -19,7 +19,12 @@ public class GameUIController : TurnObject, ITurnable, IInitiable
     public void EndTurn(PlayerController pl)
     {
         coins.text = pl.Data.Coins.ToString();
-        soldiders.text = pl.Data.Soldiers.Count.ToString();
+        int counter = 0;
+        for(int i = 0; i < pl.Data.Soldiers.Count; ++i)
+        {
+            counter += pl.Data.Soldiers[i].GetComponent<SoldierController>().Data.Amount;
+        }
+        soldiders.text = counter.ToString();
     }
 
     public void Initialize(PlayerController pl)

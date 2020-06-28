@@ -40,17 +40,17 @@ public class DiceController : Controller
 
     private void OnMouseDown()
     {
-        RollDice();
-        Data.Rolled = true;
+        if (!Data.Rolled)
+        {
+            RollDice();
+            Data.Rolled = true;
+        }
     }
 
     private void RollDice()
     {
-        if (!Data.Rolled)
-        {
-            rg.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
-            rg.AddTorque(new Vector3(UnityEngine.Random.Range(0, 500), UnityEngine.Random.Range(0, 500), UnityEngine.Random.Range(0, 500)));
-        }
+        rg.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
+        rg.AddTorque(new Vector3(UnityEngine.Random.Range(0, 500), UnityEngine.Random.Range(0, 500), UnityEngine.Random.Range(0, 500)));
     }
 
     public override Data GetData()
