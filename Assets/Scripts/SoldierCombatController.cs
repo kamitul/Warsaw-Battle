@@ -12,20 +12,20 @@ public class SoldierCombatController : MonoBehaviour
         get => soldierController.Data.Amount * soldierController.Data.Damage;
     }
 
-    public void takeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         int unitsDiedCount = (int)(damageAmount / soldierController.Data.HP);
         soldierController.Data.Amount -= unitsDiedCount;
 
         if (soldierController.Data.Amount <= 0)
         {
-            executeDeath();
+            ExecuteDeath();
         }
 
         OnDamageTaken?.Invoke(unitsDiedCount);
     }
 
-    private void executeDeath()
+    private void ExecuteDeath()
     {
         Debug.Log("Death of " + gameObject);
         // ?

@@ -18,14 +18,14 @@ public class SoldierUIController : MonoBehaviour, ISetable
     private void OnDisable()
     {
         soldierData.DataChanged -= UpdateUI;
-        gameObject.GetComponent<SoldierCombatController>().OnDamageTaken -= displayDmgTaken;
+        gameObject.GetComponent<SoldierCombatController>().OnDamageTaken -= DisplayDmgTaken;
     }
 
     public void Set(dynamic data)
     {
         this.soldierData = data as SoldierData;
         soldierData.DataChanged += UpdateUI;
-        gameObject.GetComponent<SoldierCombatController>().OnDamageTaken += displayDmgTaken;
+        gameObject.GetComponent<SoldierCombatController>().OnDamageTaken += DisplayDmgTaken;
     }
 
     private void UpdateUI(SoldierData obj)
@@ -33,7 +33,7 @@ public class SoldierUIController : MonoBehaviour, ISetable
         amount.text = obj.Amount.ToString();
     }
 
-    private void displayDmgTaken(int dmg)
+    private void DisplayDmgTaken(int dmg)
     {
         damageTooltip.SetActive(true);
         damageTooltip.GetComponentInChildren<Text>().text = "-" + dmg.ToString();
