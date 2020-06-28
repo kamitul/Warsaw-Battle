@@ -6,13 +6,13 @@ Description
 [1920JAM](https://www.1920jam.pl)
 
 # Programming
-@kamitul @nefarinus @blazejczaicki
+**@kamitul @nefarinus @blazejczaicki**
 
 # Models
-@blazejczaicki
+**@blazejczaicki**
 
 # Music
-@shorti3
+**@shorti3**
 
 # Some screenshots
 
