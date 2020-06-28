@@ -1,5 +1,4 @@
-# Battle Jam
-
+# Warsaw Battle
 Description
 ------------
 3D turn board strategy game made in Unity during 1920JAM
