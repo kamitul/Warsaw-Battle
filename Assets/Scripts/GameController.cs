@@ -24,41 +24,34 @@ public class GameController : MonoBehaviour
 
     private GameObject currentSoldier;
 
-    private ObservableCollection<SoldierMovement> soldiers = new ObservableCollection<SoldierMovement>();
-
     public GameObject CurrentSoldier { get => currentSoldier; }
     public PlayerController CurrentPlayer { get => turnController.CurrentPlayer; }
-    public ObservableCollection<SoldierMovement> Soldiers { get => soldiers; }
 
     private void Awake()
     {
-        var objs = turnController.Initialize();
-        soldiers.CollectionChanged += UpdateSubscription;
-        for (int i = 0; i < objs.Count; ++i)
-        {
-            soldiers.Add(objs[i].GetComponent<SoldierMovement>());
-        }
+        unitsController.Soldiers.CollectionChanged += UpdateSubscription;
+        unitsController.Initialize();
     }
 
     private void OnDisable()
     {
-        soldiers.CollectionChanged -= UpdateSubscription;
+        unitsController.Soldiers.CollectionChanged -= UpdateSubscription;
     }
 
     private void UpdateSubscription(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
     {
-        for (int i = 0; i < soldiers.Count; ++i)
+        for (int i = 0; i < unitsController.Soldiers.Count; ++i)
         {
-            soldiers[i].OnDeselected += Deselect;
-            soldiers[i].OnSelected += Select;
+            unitsController.Soldiers[i].OnDeselected += Deselect;
+            unitsController.Soldiers[i].OnSelected += Select;
         }
     }
 
     private void Deselect()
     {
-        for (int i = 0; i < soldiers.Count; ++i)
+        for (int i = 0; i < unitsController.Soldiers.Count; ++i)
         {
-            soldiers[i].SoldierSelector.Deselect();
+            unitsController.Soldiers[i].SoldierSelector.Deselect();
         }
     }
 
@@ -152,9 +145,9 @@ public class GameController : MonoBehaviour
 
     private void ResetMovement()
     {
-        for (int i = 0; i < soldiers.Count; ++i)
+        for (int i = 0; i < unitsController.Soldiers.Count; ++i)
         {
-            var sol = soldiers[i].GetComponent<SoldierController>();
+            var sol = unitsController.Soldiers[i].GetComponent<SoldierController>();
             if (sol.Data.Ownership == CurrentPlayer.Data.PlayerType)
                 sol.Data.Movement = 0;
         }

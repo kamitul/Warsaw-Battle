@@ -19,6 +19,9 @@ public class PlayerData : Data
     [SerializeField]
     private PlayerType playerType;
 
+    [SerializeField]
+    private int killedEnemies;
+
     public Action<PlayerData> DataChanged;
 
     public PlayerData(int timer, List<GameObject> startTroops, int coins, PlayerType type)
@@ -74,6 +77,16 @@ public class PlayerData : Data
         set
         {
             playerType = value;
+            DataChanged?.Invoke(this);
+        }
+    }
+
+    public int KilledEnemies
+    {
+        get => killedEnemies;
+        set
+        {
+            killedEnemies = value;
             DataChanged?.Invoke(this);
         }
     }
