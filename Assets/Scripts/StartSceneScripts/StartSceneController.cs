@@ -10,7 +10,7 @@ public class StartSceneController : MonoBehaviour
 {
     [SerializeField] private List<ImageSlideData> panels;
     private int index = 0;
-    private float currentTime=6.0f;
+    private float currentTime=3.0f;
 
     void Update()
     {
