@@ -50,6 +50,6 @@ public class ObjectiveController : TurnObject, ITurnable, IInitiable
 
     public void Initialize(PlayerController pl)
     {
-        
+
     }
 }

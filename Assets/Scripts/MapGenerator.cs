@@ -29,7 +29,7 @@ public class MapGenerator : MonoBehaviour
     private void Awake()
     {
         GenerateMap();
-        for(int i = 0; i < mapPlacers.Count; ++i)
+        for (int i = 0; i < mapPlacers.Count; ++i)
         {
             mapPlacers[i].SetTiles(hexTiles);
         }
@@ -40,7 +40,8 @@ public class MapGenerator : MonoBehaviour
 
     private void GenerateMap()
     {
-        for (int z = 0, i = 0; z < 38; z++)
+
+        for (int z = 0; z < 38; z++)
         {
             for (int x = 0; x < 15; x++)
             {
