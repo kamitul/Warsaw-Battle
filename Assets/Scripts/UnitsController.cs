@@ -51,7 +51,8 @@ public class UnitsController : MonoBehaviour
     {
         for (int i = 0; i < soldiers.Count; ++i)
         {
-            soldiers[i].GetComponent<SoldierCombatController>().OnDestroy -= DestroyTroop;
+            if(soldiers[i] != null)
+                soldiers[i].GetComponent<SoldierCombatController>().OnDestroy -= DestroyTroop;
         }
     }
 

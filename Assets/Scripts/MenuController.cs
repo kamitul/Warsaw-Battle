@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField] private GameObject options;
-
     public void LoadScene(int index)
     {
         SceneManager.LoadScene(index);
@@ -15,10 +13,5 @@ public class MenuController : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-    }
-
-    public void Options()
-    {
-        options.SetActive(true);
     }
 }

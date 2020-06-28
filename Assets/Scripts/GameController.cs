@@ -109,7 +109,6 @@ public class GameController : MonoBehaviour
 
             if (tile && tile.Data.Status == Type.REACHABLE)
             {
-                Debug.Log("move");
                 SoldierMovement sol = currentSoldier.GetComponent<SoldierMovement>();
                 sol.MoveToTile(tile.transform.position, (tile.transform.position - sol.transform.position).sqrMagnitude);
                 tile.Data.Status = Type.UNIT;

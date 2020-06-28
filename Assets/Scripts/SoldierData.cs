@@ -51,7 +51,7 @@ public class SoldierData : Data
         set
         {
             amount = value;
-            DataChanged.Invoke(this);
+            DataChanged?.Invoke(this);
         }
     }
 
@@ -61,7 +61,7 @@ public class SoldierData : Data
         set
         {
             damage = value;
-            DataChanged.Invoke(this);
+            DataChanged?.Invoke(this);
         }
     }
 
@@ -71,7 +71,7 @@ public class SoldierData : Data
         set
         {
             hp = value;
-            DataChanged.Invoke(this);
+            DataChanged?.Invoke(this);
         }
     }
 
@@ -81,7 +81,7 @@ public class SoldierData : Data
         set
         {
             movement = value;
-            DataChanged.Invoke(this);
+            DataChanged?.Invoke(this);
         }
     }
 
@@ -91,7 +91,7 @@ public class SoldierData : Data
         set
         {
             attackRange = value;
-            DataChanged.Invoke(this);
+            DataChanged?.Invoke(this);
         }
     }
 
@@ -101,7 +101,7 @@ public class SoldierData : Data
         set
         {
             actionsRemaining = value;
-            DataChanged.Invoke(this);
+            DataChanged?.Invoke(this);
         }
     }
 
@@ -116,7 +116,7 @@ public class SoldierData : Data
         set
         {
             ownType = value;
-            DataChanged.Invoke(this);
+            DataChanged?.Invoke(this);
         }
     }
 

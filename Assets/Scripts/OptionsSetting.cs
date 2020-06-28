@@ -24,9 +24,4 @@ public class OptionsSetting : MonoBehaviour
     {
         audioSource.volume = volume;
     }
-
-    public void Back()
-    {
-        gameObject.SetActive(false);
-    }
 }

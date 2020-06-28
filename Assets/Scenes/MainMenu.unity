@@ -1093,7 +1093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d2fe7e3755d5446877273ef6bc651a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screens: []
+  screens:
+  - {fileID: 607025263}
+  - {fileID: 756080389}
 --- !u!1 &388186469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,7 +1450,7 @@ GameObject:
   - component: {fileID: 607025266}
   - component: {fileID: 607025265}
   m_Layer: 5
-  m_Name: Image
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4582,7 +4584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61101434434829c44b32cdc8d3cdf638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  options: {fileID: 756080389}
 --- !u!1001 &1413424080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5416,7 +5417,7 @@ PrefabInstance:
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
@@ -5427,11 +5428,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 756080393}
+      objectReference: {fileID: 336542588}
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Back
+      value: OpenScreen
       objectReference: {fileID: 0}
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
@@ -5442,6 +5443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 3863661092430468719, guid: c642603f052a84540875867149c95fe1,
         type: 3}
@@ -7251,7 +7257,7 @@ PrefabInstance:
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
@@ -7262,16 +7268,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1409076515}
+      objectReference: {fileID: 336542588}
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Options
+      value: OpenScreen
       objectReference: {fileID: 0}
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Options
       objectReference: {fileID: 0}
     - target: {fileID: 3863661092430468719, guid: c642603f052a84540875867149c95fe1,
         type: 3}
@@ -7806,7 +7817,7 @@ PrefabInstance:
     - target: {fileID: 3551042449586501832, guid: c642603f052a84540875867149c95fe1,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3863661092430468719, guid: c642603f052a84540875867149c95fe1,
         type: 3}
