@@ -7,4 +7,5 @@ public class UITroop : MonoBehaviour
 {
     public EnemyType Type;
     public Image Image;
+    public int Price;
 }

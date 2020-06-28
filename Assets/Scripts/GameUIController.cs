@@ -16,21 +16,44 @@ public class GameUIController : TurnObject, ITurnable, IInitiable
     [SerializeField]
     private TextMeshProUGUI soldiders;
 
-    public void EndTurn(PlayerController pl)
+    [SerializeField]
+    private List<PlayerController> players;
+
+    private void OnEnable()
     {
-        coins.text = pl.Data.Coins.ToString();
-        int counter = 0;
-        for(int i = 0; i < pl.Data.Soldiers.Count; ++i)
+        for(int i = 0; i <players.Count; ++i)
         {
-            counter += pl.Data.Soldiers[i].GetComponent<SoldierController>().Data.Amount;
+            players[i].Data.DataChanged += UpdateUI;
+        }
+    }
+
+    private void UpdateUI(PlayerData obj)
+    {
+        coins.text = obj.Coins.ToString();
+        int counter = 0;
+        for (int i = 0; i < obj.Soldiers.Count; ++i)
+        {
+            counter += obj.Soldiers[i].GetComponent<SoldierController>().Data.Amount;
         }
         soldiders.text = counter.ToString();
     }
 
+    private void OnDisable()
+    {
+        for (int i = 0; i < players.Count; ++i)
+        {
+            players[i].Data.DataChanged -= UpdateUI;
+        }
+    }
+
+    public void EndTurn(PlayerController pl)
+    {
+        UpdateUI(pl.Data);
+    }
+
     public void Initialize(PlayerController pl)
     {
-        coins.text = pl.Data.Coins.ToString();
-        soldiders.text = pl.Data.Soldiers.Count.ToString();
+        UpdateUI(pl.Data);
     }
 
     public void OpenScreen(string name)

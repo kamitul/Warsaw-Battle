@@ -43,9 +43,9 @@ public class ObjectiveController : TurnObject, ITurnable, IInitiable
         var mostUnits = counts.OrderBy(x => x.Value).Last();
 
         if (mostUnits.Key == Ownership)
-            DataController.Instance.GetController<PlayerController>(mostUnits.Key).Data.Coins += mostUnits.Value * 50;
+            DataController.Instance.GetController<PlayerController>(mostUnits.Key).Data.Coins += mostUnits.Value * 25;
         else
-            DataController.Instance.GetController<PlayerController>(mostUnits.Key).Data.Coins += mostUnits.Value * 150;
+            DataController.Instance.GetController<PlayerController>(mostUnits.Key).Data.Coins += mostUnits.Value * 50;
     }
 
     public void Initialize(PlayerController pl)

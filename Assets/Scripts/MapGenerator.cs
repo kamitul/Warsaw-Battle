@@ -1,7 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
+
+[System.Serializable]
+public class UnitPosition
+{
+    public PlayerType PlayerType;
+    public Vector3[] Positions;
+}
 
 public class MapGenerator : MonoBehaviour
 {
@@ -19,6 +27,9 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> hexTiles = default;
+
+    [SerializeField]
+    private List<UnitPosition> basePositions;
 
     [SerializeField]
     private List<MapPlacer> mapPlacers;
@@ -56,5 +67,18 @@ public class MapGenerator : MonoBehaviour
 
         parent.localPosition = new Vector3(-8.7F, 1.041f, -6.28f);
         parent.localRotation = Quaternion.Euler(new Vector3(0, 45, 0));
+    }
+
+    public void PlaceTroopBase(GameObject inst, PlayerController pl, Quaternion rotation)
+    {
+        inst.transform.rotation = rotation;
+        UnitPosition pos = basePositions.Find(x => x.PlayerType == pl.Data.PlayerType);
+        inst.transform.position = pos.Positions[UnityEngine.Random.Range(0, pos.Positions.Length - 1)];
+    }
+
+    public void PlaceTroopBase(GameObject inst, Vector3 pos, Quaternion rotation)
+    {
+        inst.transform.rotation = rotation;
+        inst.transform.position = pos;
     }
 }

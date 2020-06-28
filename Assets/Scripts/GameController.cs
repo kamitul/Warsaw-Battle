@@ -79,6 +79,13 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void EndTurn()
+    {
+        currentSoldier = null;
+        rangeDrawer.Redraw();
+        turnController.NextTurn();
+    }
+
     private void PerformAction()
     {
         if (Input.GetMouseButtonDown(0))
@@ -132,9 +139,6 @@ public class GameController : MonoBehaviour
     private bool GaugeAttackRange(GameObject currentSoldier, GameObject clickedSoldier)
     {
         SoldierController currentCtrl = currentSoldier.GetComponent<SoldierController>();
-
-        Debug.Log(currentCtrl.Data.AttackRange * HexTile.HexSize + " " + Vector3.Distance(currentSoldier.transform.position, clickedSoldier.transform.position));
-
         return currentCtrl.Data.AttackRange * HexTile.HexSize >= Vector3.Distance(currentSoldier.transform.position, clickedSoldier.transform.position);
     }
 

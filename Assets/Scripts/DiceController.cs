@@ -40,6 +40,11 @@ public class DiceController : Controller
 
     private void OnMouseDown()
     {
+        Roll();
+    }
+
+    public void Roll()
+    {
         if (!Data.Rolled)
         {
             RollDice();

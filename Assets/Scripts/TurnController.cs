@@ -78,8 +78,8 @@ public class TurnController : MonoBehaviour, ISerializationCallbackReceiver
             var troop = initialTroops[i].Positions.Find(x => x.Ownership == pl);
             if (troop != null)
             {
-                Vector3 position = troop.Position;
-                var obj = Instantiate(initialTroops[i].Soldier, position, Quaternion.identity, null);
+                var obj = Instantiate(initialTroops[i].Soldier, null);
+                mapGenerator.PlaceTroopBase(obj, troop.Position, Quaternion.identity);
                 ret.Add(obj);
             }
         }

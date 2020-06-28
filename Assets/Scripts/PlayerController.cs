@@ -11,7 +11,7 @@ public class PlayerController : Controller, ITurnable, IInitiable
 
     public void EndTurn(PlayerController pl)
     {
-        Data.Coins += Data.KilledEnemies * 100;
+        Data.Coins += Data.KilledEnemies * 20;
         Data.KilledEnemies = 0;
     }
 
