@@ -5,7 +5,7 @@ public class SoldierCombatController : MonoBehaviour
 {
     [SerializeField] private SoldierController soldierController;
 
-    public Action OnDamageTaken;
+    public Action<int> OnDamageTaken;
 
     public float DamageDealt
     {
@@ -14,14 +14,15 @@ public class SoldierCombatController : MonoBehaviour
 
     public void takeDamage(float damageAmount)
     {
-        soldierController.Data.Amount -= (int)(damageAmount / soldierController.Data.HP);
+        int unitsDiedCount = (int)(damageAmount / soldierController.Data.HP);
+        soldierController.Data.Amount -= unitsDiedCount;
 
         if (soldierController.Data.Amount <= 0)
         {
             executeDeath();
         }
 
-        OnDamageTaken?.Invoke();
+        OnDamageTaken?.Invoke(unitsDiedCount);
     }
 
     private void executeDeath()
