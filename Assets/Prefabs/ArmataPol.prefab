@@ -141,8 +141,9 @@ MonoBehaviour:
     movement: 1
     attackRange: 5
     maxActionsPerTurn: 0
-    actionsRemaining: 0
+    actionsRemaining: 2
     ownType: 0
+    enemyType: 0
     TotalDamage: 0
   soldierUI: {fileID: 4125937151107682399}
 --- !u!114 &6849963825564743712

@@ -3,9 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using UnityEngine.SocialPlatforms.GameCenter;
-using UnityEngine.Tilemaps;
 
 public class RangeDrawer : MonoBehaviour
 {

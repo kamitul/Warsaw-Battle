@@ -34,7 +34,7 @@ public class StartSceneController : MonoBehaviour
     private void CheckEnd()
     {
       index = 0;
-      SceneManager.LoadScene(0);
+      SceneManager.LoadScene(1);
     }
 
     private void ChangeImage()
