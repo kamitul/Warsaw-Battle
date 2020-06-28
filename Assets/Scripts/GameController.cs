@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     private TurnController turnController;
 
     [SerializeField]
+    private UnitsController unitsController;
+
+    [SerializeField]
     private LayerMask layer;
 
     private GameObject currentSoldier;
@@ -144,7 +147,7 @@ public class GameController : MonoBehaviour
 
     private void PerformAttack(GameObject currentSoldier, GameObject clickedSoldier)
     {
-        clickedSoldier.GetComponent<SoldierCombatController>().takeDamage(currentSoldier.GetComponent<SoldierCombatController>().DamageDealt);
+        clickedSoldier.GetComponent<SoldierCombatController>().TakeDamage(currentSoldier.GetComponent<SoldierCombatController>().DamageDealt);
     }
 
     private void ResetMovement()
