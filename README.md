@@ -5,4 +5,4 @@ Description
 
 # Some screenshots
 
-![Alt text](Media/Szturm na Warszawę.mp4?raw=true)
+![Alt text](Media/WarsawBattle.gif?raw=true)
