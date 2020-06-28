@@ -96,6 +96,7 @@ MonoBehaviour:
   hexData:
     Status: 0
     CurrentObj: {fileID: 0}
+  mesh: {fileID: 6153881441068963270}
 --- !u!65 &102212705131665834
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HexTile : Controller
@@ -7,7 +8,12 @@ public class HexTile : Controller
     [SerializeField]
     private HexData hexData;
 
+    [SerializeField]
+    private MeshRenderer mesh;
+
     public static float HexSize = 0.5f;
+
+    private Color prevColor;
 
     public HexData Data { get => hexData; }
 
@@ -31,5 +37,16 @@ public class HexTile : Controller
     {
         Data.CurrentObj = null;
         Data.Status = Type.WALKABLE;
+    }
+
+    private void OnMouseEnter()
+    {
+        prevColor = mesh.materials[mesh.materials.Length - 1].color;
+        mesh.materials[mesh.materials.Length - 1].color = Color.green;
+    }
+
+    private void OnMouseExit()
+    {
+        mesh.materials[mesh.materials.Length - 1].color = prevColor;
     }
 }

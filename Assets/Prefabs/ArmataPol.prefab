@@ -140,7 +140,7 @@ MonoBehaviour:
     hp: 5
     movement: 1
     attackRange: 5
-    maxActionsPerTurn: 0
+    maxActionsPerTurn: 1
     actionsRemaining: 2
     ownType: 0
     enemyType: 0
