@@ -32,7 +32,7 @@ public class PlayerData : Data
 
     private void SetTroops()
     {
-        for(int i = 0; i < soldiers.Count; ++i)
+        for (int i = 0; i < soldiers.Count; ++i)
         {
             soldiers[i].GetComponent<SoldierController>().Data.Ownership = playerType;
         }

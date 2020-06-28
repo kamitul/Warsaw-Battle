@@ -7,6 +7,8 @@ public enum Type
     REACHABLE,
     NON_REACHABLE,
     NON_WALKABLE,
+    WALKABLE,
+    UNIT
 }
 
 [System.Serializable]
