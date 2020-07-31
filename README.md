@@ -15,4 +15,4 @@ Description
 
 # Some screenshots
 
-![Alt text](Media/WarsawBattle.gif?raw=true)
+![Alt text](Media/play.gif?raw=true)
